@@ -34,6 +34,10 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "./node_modules/@fortawesome/fontawesome-pro/css/all.min.css",
+              "./node_modules/@fortawesome/fontawesome-pro/css/sharp-light.min.css",
+              "./node_modules/@fortawesome/fontawesome-pro/css/sharp-regular.min.css",
+              "./node_modules/@fortawesome/fontawesome-pro/css/sharp-solid.min.css",
               "src/styles.scss"
             ],
             "scripts": []
