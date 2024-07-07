@@ -1,4 +1,4 @@
-# AngularApp16 / Lesson 2 / Setup Project Structure
+# AngularApp16 / Lesson 4 / Install Font Awesome Pro
 
 ```
 Assumptions
@@ -81,7 +81,7 @@ Procedures
       
     b. Build the project
        unix> cd angularApp16
-       unix> git checkout lesson2/setup-project-structure
+       unix> git checkout lesson4/install-font-awesome
        unix> mvn clean package -Pprod
        
     c. Run the webapp
