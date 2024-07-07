@@ -1,4 +1,4 @@
-# AngularApp16 / Lesson 4 / Install Font Awesome Pro
+# AngularApp16 / Lesson 5a / Setup Navbar w/Angular Material
 
 ```
 Assumptions
@@ -81,7 +81,7 @@ Procedures
       
     b. Build the project
        unix> cd angularApp16
-       unix> git checkout lesson4/install-font-awesome
+       unix> git checkout lesson5a/setup-navbar-using-angular-material
        unix> mvn clean package -Pprod
        
     c. Run the webapp
