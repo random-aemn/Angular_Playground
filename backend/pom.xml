@@ -19,17 +19,10 @@
     <dependencies>
 
       <dependency>
-        <!-- Tell Spring Boot to use this **OLDER** version of flyway that works with Postgres 9.6 -->
-        <groupId>org.flywaydb</groupId>
-        <artifactId>flyway-core</artifactId>
-        <version>5.2.4</version>
-      </dependency>
-
-      <dependency>
         <!-- Set the Spring Boot Version -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>2.7.3</version>
+        <version>3.2.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -87,33 +80,50 @@
       <!-- Send logging from Java Common Logging to SLF4J -->
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
-      <version>1.7.36</version>
+      <version>2.0.5</version>
     </dependency>
 
     <dependency>
       <!-- SLF4J will use Logback-classic as its logging implementation -->
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.2.12</version>
+      <version>1.4.11</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>5.3.21</version>
+      <version>6.1.2</version>
     </dependency>
 
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-web</artifactId>
-      <version>5.3.21</version>
+      <version>6.1.2</version>
     </dependency>
 
     <dependency>
-      <!-- Implementation for converting objects to JSON -->
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-config</artifactId>
+      <version>6.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.15.3</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.13.3</version>
+      <version>2.15.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.15.3</version>
     </dependency>
 
     <dependency>
@@ -135,7 +145,7 @@
          -->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
-        <version>2.7.3</version>
+        <version>3.2.0</version>
         <configuration>
           <addResources>true</addResources>
         </configuration>
