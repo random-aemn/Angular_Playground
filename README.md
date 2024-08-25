@@ -1,4 +1,4 @@
-# AngularApp16 / Lesson 6 / Setup Database and ES connectivity
+# AngularApp16 / Lesson 7 / Setup the Navigation Bar using Tailwind
 
 ```
 Assumptions
@@ -81,7 +81,7 @@ Procedures
        terminal> git clone https://github.com/traderres/angularApp16.git
  
     b. Checkout the correct branch
-       terminal> git checkout lesson6/add-database-and-es
+       terminal> git checkout lesson7/setup-navbar-using-tailwind
 
     c. Initialize the local postgres database by following the steps in docs/howToInitializePostgresDatabase.dev.txt
     
