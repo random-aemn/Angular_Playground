@@ -341,7 +341,7 @@ public class EmailService {
         // Construct the email body
         String emailBody =
                 "** This is an automatically generated email. Please do not respond to this email.** " +
-                "The CVF Sync-Service through an exception\n" +
+                "The Sync-Service through an exception\n" +
                 "View the Exceptions here\n" +
                 "  https://tesseract.cloud.dcsa.mil/nccs-admin/  \n" +
                 "\n" +

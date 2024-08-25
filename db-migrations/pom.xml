@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.lessons</groupId>
@@ -8,46 +8,41 @@
     </parent>
 
     <artifactId>db-migrations</artifactId>
-    <packaging>jar</packaging>
 
-    <name>common-backend</name>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <name>db-migrations</name>
 
     <dependencies>
-        <dependency>
-            <!-- StringUtils Dependency -->
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.14.0</version>
-        </dependency>
 
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>6.1.2</version>
+            <!-- Database Driver that flyway-maven-plugin uses to talk to the database -->
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.4</version>
         </dependency>
 
-        <dependency>
-            <!-- SLF4J will use Logback-classic as its logging implementation -->
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.4.11</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.15.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+
+    <properties>
+        <!-- Allow flyway:clean to actually erase the database -->
+        <flyway.cleanDisabled>false</flyway.cleanDisabled>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.5.7</version>
+
+                <configuration>
+                    <!-- Set the postgres credentials when running mvn flyway:migrate from command-line -->
+                    <user>app16_user</user>
+                    <password>secret</password>
+                    <url>jdbc:postgresql://localhost:5432/app16_db</url>
+                    <schemas>app16_db</schemas>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

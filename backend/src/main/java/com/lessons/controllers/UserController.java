@@ -23,7 +23,7 @@ public class UserController {
      * REST endpoint /api/user/me
      */
     @RequestMapping(value = "/api/user/me", method = RequestMethod.GET, produces = "application/json")
-    @PreAuthorize("hasAnyRole('CVF_SUPERVISOR', 'CVF_SPECIALIST', 'CVF_ADMIN', 'CVF_REVIEWER')")
+    @PreAuthorize("hasAnyRole('APP16F_SUPERVISOR', 'APP16_SPECIALIST', 'APP16_ADMIN', 'APP16_REVIEWER')")
     public ResponseEntity<?> getUserInfo() {
 
         // Get information from about the logged-in user:  userid, username, full name, ....

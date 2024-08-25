@@ -1,4 +1,4 @@
-# AngularApp16 / Lesson 5a / Setup Navbar w/Angular Material
+# AngularApp16 / Lesson 6 / Setup Database and ES connectivity
 
 ```
 Assumptions
@@ -75,22 +75,28 @@ Procedures
             ├── corepack@0.18.0
             └── npm@9.6.7
 
+
  2. Compile & Run the Web App
     a. Clone the project
        unix> git clone https://github.com/traderres/angularApp16.git
       
-    b. Build the project
+    b. Initialize the local postgres database by following the steps in docs/howToInitializePostgresDatabase.dev.txt
+    
+    c. Build the project
        unix> cd angularApp16
-       unix> git checkout lesson5a/setup-navbar-using-angular-material
+       unix> git checkout lesson6/add-database-and-es
        unix> mvn clean package -Pprod
+    
+    d. Nuke the database and rebuild ElasticSearch 
+       unix> java -Dapp.datasource.flyway-clean-on-startup=TRUE -jar ./sync-service/target/sync-service-1.0-SNAPSHOT-exec.jar
        
-    c. Run the webapp
+    e. Run the webapp
        unix> java -jar ./backend/target/backend-1.0-SNAPSHOT-exec.jar 
        
-    d. Connect to the webapp listening on port 8080
+    f. Connect to the webapp listening on port 8080
        Go to http://localhost:8080/app16
     
-    e. Stop the webapp by pressing Control-C
+    g. Stop the webapp by pressing Control-C
 
 
 ```

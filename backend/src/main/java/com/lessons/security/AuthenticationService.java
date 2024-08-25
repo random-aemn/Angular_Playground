@@ -149,7 +149,7 @@ public class AuthenticationService {
 
         // Simulate keycloak has granted this user these roles
         List<GrantedAuthority> keycloakRolesGranted = new ArrayList<>();
-        keycloakRolesGranted.add(new SimpleGrantedAuthority("ROLE_CVF_ADMIN"));
+        keycloakRolesGranted.add(new SimpleGrantedAuthority("ROLE_APP16_ADMIN"));
 
         KeycloakUserInfoDTO keycloakUserInfoDTO = new KeycloakUserInfoDTO(keycloakCertUsername,
                                                                           keycloakFullName,

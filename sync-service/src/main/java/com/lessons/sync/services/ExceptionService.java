@@ -28,7 +28,7 @@ public class ExceptionService {
 
 
     private String appVersion;
-    private final String APPLICATION_NAME = "cvf-sync-service";
+    private final String APPLICATION_NAME = "app16-sync-service";
 
 
     @PostConstruct

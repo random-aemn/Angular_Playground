@@ -5,7 +5,7 @@
 # Purpose:   Set the dev profile for testing with a local database and hard-coded credentials
 #################################################################################################
 name: app1
-server.servlet.context-path: /cvf
+server.servlet.context-path: /app16
 server.port: 8080
 
 
@@ -72,7 +72,7 @@ spring.servlet.multipart.max-request-size: 400MB
 ##########################################################
 # Document Settings
 ##########################################################
-root.dir: c:/temp/cvf
+root.dir: c:/temp/app16
 uploads.dir: ${root.dir}/uploads
 s3.enabled: false
 
