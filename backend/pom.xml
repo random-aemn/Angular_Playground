@@ -13,6 +13,7 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>backend</name>
+  <packaging>jar</packaging>
 
 
   <dependencyManagement>
@@ -77,6 +78,20 @@
     </dependency>
 
     <dependency>
+      <!-- Hikari Data Source / JDBC Connection Pool -->
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>5.0.1</version>
+    </dependency>
+
+    <dependency>
+      <!-- Database Driver that is used to by Java to talk to the SQL database -->
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.5.4</version>
+    </dependency>
+
+    <dependency>
       <!-- Send logging from Java Common Logging to SLF4J -->
       <groupId>org.slf4j</groupId>
       <artifactId>jcl-over-slf4j</artifactId>
@@ -88,6 +103,29 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.4.11</version>
+    </dependency>
+
+    <dependency>
+      <!-- Add the dependency for the SSLContextFactory's use of DatatypeConverter -->
+      <!-- This ensures that SSLContextFactory will compile with Java 17           -->
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>3.0.0</version>
+    </dependency>
+
+    <dependency>
+      <!-- StringUtils Dependency -->
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.14.0</version>
+    </dependency>
+
+    <dependency>
+      <!-- Apache POI dependency (used to generate xlsx files) -->
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.2</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -104,8 +142,20 @@
 
     <dependency>
       <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-web</artifactId>
+      <version>6.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-config</artifactId>
       <version>6.1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.11.0</version>
     </dependency>
 
     <dependency>
@@ -113,13 +163,11 @@
       <artifactId>jackson-core</artifactId>
       <version>2.15.3</version>
     </dependency>
-
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
       <version>2.15.3</version>
     </dependency>
-
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-annotations</artifactId>
@@ -127,11 +175,106 @@
     </dependency>
 
     <dependency>
+      <!-- Sprint Boot / Keycloak Integration / Add the OAuth2/OpenID client to talk to Keycloak and authenticate users -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-oauth2-client</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+      <version>4.4</version>
+    </dependency>
+
+    <dependency>
+      <!-- AsyncHttpClient Client implementation (used to make outgoing REST calls out to ES) -->
+      <groupId>com.ning</groupId>
+      <artifactId>async-http-client</artifactId>
+      <version>1.9.40</version>
+    </dependency>
+
+    <dependency>
+      <!-- Add common backend as a dependency -->
+      <groupId>${project.groupId}</groupId>
+      <artifactId>common-backend</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <!-- Add wrapper to invoke virus-scanning with clamAV -->
+      <groupId>com.eurodyn.qlack.util</groupId>
+      <artifactId>qlack-util-clam-av</artifactId>
+      <version>3.5.3</version>
+
+      <exclusions>
+        <!-- The qlack-util-clam-av dependency comes with lots of stuff we do not need -->
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-configuration-processor</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-core</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.jboss.logging</groupId>
+          <artifactId>jboss-logging</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>com.zaxxer</groupId>
+          <artifactId>HikariCP</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-jdbc</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-aop</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>commons-codec</groupId>
+          <artifactId>commons-codec</artifactId>
+        </exclusion>
+
+        <exclusion>
+          <groupId>com.querydsl</groupId>
+          <artifactId>querydsl-core</artifactId>
+        </exclusion>
+
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <!-- Send logging from Java Util Logging to SLF4J -->
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>1.7.30</version>
+    </dependency>
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
+
   </dependencies>
 
   <build>
@@ -170,7 +313,38 @@
           <target>17</target>
         </configuration>
       </plugin>
+
+
+      <plugin>
+        <!-- Use the git-commit-id plugin to generate the git.properties file that has info about who compiled the app  -->
+        <!-- See https://github.com/git-commit-id/git-commit-id-maven-plugin                                            -->
+        <groupId>io.github.git-commit-id</groupId>
+        <artifactId>git-commit-id-maven-plugin</artifactId>
+        <version>7.0.0</version>
+
+        <executions>
+          <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>validate-the-git-infos</id>
+            <goals>
+              <goal>validateRevision</goal>
+            </goals>
+          </execution>
+        </executions>
+
+        <configuration>
+          <verbose>false</verbose>
+          <generateGitPropertiesFile>true</generateGitPropertiesFile>
+        </configuration>
+      </plugin>
+
     </plugins>
   </build>
+
 
 </project>

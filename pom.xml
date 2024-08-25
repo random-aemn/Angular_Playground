@@ -10,6 +10,9 @@
   <modules>
     <module>frontend</module>
     <module>backend</module>
+    <module>db-migrations</module>
+    <module>sync-service</module>
+    <module>common-backend</module>
   </modules>
 
 

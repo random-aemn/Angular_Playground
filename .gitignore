@@ -35,8 +35,12 @@ frontend/.vscode/*
 # Ignore frontend/dist directory
 frontend/dist/*
 
-## Ignore the target directories
+# Ignore the target directories
 backend/target/*
+common-backend/target/*
+db-migrations/target/*
+sync-service/target/*
+
 
 # IDEs and editors
 .idea/

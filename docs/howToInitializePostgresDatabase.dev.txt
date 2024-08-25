@@ -1,0 +1,24 @@
+How to Initialize the App16 Postgres Database
+---------------------------=-----------------
+NOTE:  The flyway scripts cannot create a database
+       Someone *must* create an empty database first
+
+
+Procedure
+---------
+ 1. Create the app16_db and app16_user
+    unix> psql -U postgres -h localhost
+
+          create database app16_db;
+          create user app16_user with password 'secret';
+          grant all privileges on database app16_db to app16_user;
+          alter database app16_db     SET search_path=app16_db;
+          alter role     app16_user   SET search_path=app16_db;
+          \q
+
+ 2. Create the app16_db schema
+    unix> psql -U app16_user -d app16_db -h localhost
+    password:
+
+      create schema app16_db;
+      \q

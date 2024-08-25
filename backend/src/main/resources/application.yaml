@@ -1,17 +1,86 @@
-##########################################################
-# application.yaml   (used for development purposes)
+#################################################################################################
+#        D E F A U L T    ( D E V )        P R O F I L E
 #
-# NOTE:  Make sure there are no leading spaces on any of these lines
-##########################################################
+# Filename:  application-dev.yaml
+# Purpose:   Set the dev profile for testing with a local database and hard-coded credentials
+#################################################################################################
 name: app1
-server.servlet.context-path: /app16
+server.servlet.context-path: /cvf
 server.port: 8080
 
 
-# Set the Active profile to be dev
-spring.profiles.active: dev
 
 # Disable cors check because we are running in local dev mode
 # NOTE:  order is important.  Make sure disable.cors comes *AFTER* you set the profile
 disable.cors: true
 
+
+# Show Exception info to local developers
+exception_handler.return_dev_info: true
+
+# Disable setting the last_login_date upon authentication
+# NOTE:  When running in local mode, there is no saved session.  So, every REST call runs sql to update the user's last login date
+#        Setting this flag to false ensures that the last login date is NOT set (which reduces the load on the developer's laptop)
+authenticate.set_last_login_date.is_enabled: false
+
+##########################################################
+# Database Settings
+##########################################################
+app.datasource:
+  enabled: true
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/app16_db
+  username: app16_user
+  password: secret
+  schema: app16_db
+  maxPoolSize: 5
+  database-name: app16_db
+
+
+
+
+##########################################################
+# ElasticSearch Settings
+##########################################################
+es:
+  url: http://localhost:9201
+  ssl_enabled: false
+
+
+
+##########################################################
+# Security & SSL Settings
+#
+# Set the security mode to "localdev" so it runs locally for a developer
+##########################################################
+security.mode: localdev    # Possible values are localdev or keycloak)
+
+
+##########################################################
+# File Upload Settings
+##########################################################
+spring.servlet.multipart.enabled: true
+
+# Set the maximum file upload size for one file    (-1 is unlimited)
+spring.servlet.multipart.max-file-size: 300MB
+
+# Set the maximum request size
+# If a user uploads 5 files of 1 MB, then the entire request size is 5 MB   (-1 is unlimited)
+spring.servlet.multipart.max-request-size: 400MB
+
+
+##########################################################
+# Document Settings
+##########################################################
+root.dir: c:/temp/cvf
+uploads.dir: ${root.dir}/uploads
+s3.enabled: false
+
+
+##########################################################
+# Virus Scanning Settings
+##########################################################
+virus-scanning.enabled: false
+qlack.util.clamav.host: localhost
+qlack.util.clamav.port: 3310
+qlack.util.clamav.socket.timeout: 100000

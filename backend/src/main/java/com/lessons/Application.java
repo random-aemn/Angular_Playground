@@ -1,5 +1,6 @@
 package com.lessons;
 
+import com.lessons.services.VersionService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.Banner;
@@ -8,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * Main Application
@@ -28,8 +30,12 @@ public class Application
         // Start up Spring Boot but disable the banner
         SpringApplication app = new SpringApplication(Application.class);
         app.setBannerMode(Banner.Mode.OFF);
-        app.run(args);
+        ConfigurableApplicationContext context = app.run(args);
 
-        logger.debug("WebApp is Up.");
+        // Get a reference to the versionService
+        VersionService versionService = (VersionService) context.getBean("com.lessons.services.VersionService");
+
+        // Log a message so that Tier 3 Support knows which version and commit Id is actually running
+        logger.info("WebApp is Up / {} / {}", versionService.getAppVersion(), versionService.getCommitId() );
     }
 }

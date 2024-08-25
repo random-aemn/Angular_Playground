@@ -1,0 +1,61 @@
+##########################################################
+# application.yaml   (used for development purposes)
+##########################################################
+
+# Set the Active profile to be dev
+spring.profiles.active: dev
+
+# Tell spring not to run flyway on start-up
+spring.flyway.enabled: false
+
+
+
+##########################################################
+# Run Settings
+#########################################################
+# If true,  then this runs as a service  (so it refreshes on startup and every night)
+# If false, then this runs once and then stops
+run.service_mode: false
+
+# If true, then a sync process will be performed on startup
+run.sync_on_startup: true
+
+
+
+##########################################################
+# Database Settings
+##########################################################
+app.datasource:
+  driver-class-name: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/app16_db
+  username: app16_user
+  password: secret
+  schema: app16_db
+  maxPoolSize: 2
+  database-name: app16_db
+
+
+###########################################################
+# ElasticSearch Settings
+##########################################################
+es:
+  url: http://localhost:9201
+  ssl_enabled: false
+
+
+##############################################################################
+# Email Settings
+#
+# If email.mode==off,  then the emails are not sent out but are logged
+# If email.mode==demo, then the emails are sent only to the email.demo.recipient_email
+# If email.mode==prod, then the emails are sent out to the assigned userid
+#
+# NOTE:  The EmailService will extract the hostname from the email.smtp.host.url
+##############################################################################
+email.mode:      'off'                           # possible modes are off, demo, and prod
+
+
+##########################################################
+# Document Settings
+##########################################################
+s3.enabled: false
