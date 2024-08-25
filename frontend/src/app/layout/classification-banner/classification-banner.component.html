@@ -1,0 +1,12 @@
+<ng-container *ngIf="( this.classifiedBannerObs | async ) as classifiedBanner">
+
+    <div class="flex flex-row place-content-center cui-banner select-none"  *ngIf="classifiedBanner.banner_mode == 'cui'">
+      Controlled Unclassified Information
+    </div>
+
+  <div class="flex flex-row place-content-center demo-banner select-none"  *ngIf="classifiedBanner.banner_mode == 'demo'">
+    DEMO Classification Banner
+  </div>
+
+</ng-container>
+

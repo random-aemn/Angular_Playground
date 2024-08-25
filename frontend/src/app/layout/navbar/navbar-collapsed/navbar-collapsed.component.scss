@@ -1,0 +1,15 @@
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+}
+
+.selected-item {
+  @apply bg-primary rounded-md transition-all ease-in-out duration-300;
+}
+
+.deselected-item {
+  @apply bg-none rounded-md transition-all ease-in-out duration-300;
+}

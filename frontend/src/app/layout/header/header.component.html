@@ -1,0 +1,28 @@
+<div class="light flex flex-row h-[60px]">
+
+	<!-- Left Side of the Header -->
+	<div class="flex flex-none" style="z-index: 10">
+
+		<!-- Center Part of the Header -->
+		<div class="basis-1/4 flex self-center place-content-start">
+
+			<!-- Application Title -->
+			<div class="text-white text-3xl clickable nowrap font-light ml-[72px]"
+				 style="font-family: Merriweather"
+				 title="Go to the Home Page" [routerLink]="'/'">
+				<span>Angular App 16</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex flex-grow" style="position: relative; overflow: hidden">
+		<div class="flex flex-grow" [ngStyle]="{'background-image': 'url(' + headerUrlDTO.url + ')', 'min-width': headerUrlDTO.isRightAligned ? headerUrlDTO.pixelWidth.toString() + 'px' : '' }"
+			 [ngClass]="{'right-aligned': headerUrlDTO.isRightAligned, 'bg-cover': !headerUrlDTO.isRightAligned}"
+			 style="background-repeat: no-repeat;">
+		</div>
+		<div class="overlay-content"
+			 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(to left, transparent, #052461);">
+		</div>
+	</div>
+
+</div>

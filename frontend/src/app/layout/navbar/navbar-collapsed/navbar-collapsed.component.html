@@ -1,0 +1,97 @@
+<!-- Please don't change this width - it lines up perfectly with the windows icon -->
+<div class="flex flex-row h-full">
+
+	<!-- The Navbar (the part that is always visible) -->
+	<div class="w-12 select-none">
+		<div class="flex flex-col bg-quaternary h-full text-white">
+			<ul class="flex flex-col h-full gap-y-5 py-5 overflow-auto hide-scrollbar">
+				<li *ngFor="let navbarObject of this.navBarObjects; let last = last"
+					[ngClass]="{'mt-auto': last}">
+					<!-- The contents of the parent nav-item (always visible) -->
+					<a [routerLink]="navbarObject.navGroupItems.length <= 1 ? navbarObject.navGroupItems[0].navItemUrl : null"
+					   (mouseenter)="navbarObject.navGroupHoveredInCollapsedMode = true"
+					   (mouseleave)="navbarObject.navGroupHoveredInCollapsedMode = false"
+					   [attr.aria-label]="navbarObject.navGroupName + ' Page Link'"
+					   [attr.title]="navbarObject.navGroupName  + ' Page Link'">
+						<div class="flex flex-row w-full mb-1 px-2 justify-center"
+							 [ngClass]="{'cursor-pointer': navbarObject.navGroupItems.length <= 1}">
+							<i class="fa-solid text-lg w-6 justify-center px-4 flex {{navbarObject.faIconTag}}"
+							   [ngClass]="{'bg-iconHover rounded-md text-white': navbarObject.navGroupHoveredInCollapsedMode,
+							   'selected-item': navbarObject.navGroupOpenedState, 'deselected-item': !navbarObject.navGroupOpenedState}"
+							   style="margin: 0 12px"></i>
+						</div>
+					</a>
+				</li>
+			</ul>
+
+			<!-- The Navbar Collapse Button -->
+			<ul class="flex flex-col mb-4">
+				<li class="hover:bg-iconHover hover:text-white">
+					<button class="flex flex-row w-full" (click)="this.toggleNavExtension()"
+							title="Collapse Navbar" aria-label="Collapse Navbar">
+						<i class="fa-solid text-lg w-6 mr-2 fa-angles-right"
+						   style="margin: 0 12px"></i>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- The floating navbar lists (the part that is NOT always visible) -->
+	<!-- NOTE: If the header height changes we have to adjust this height calc -->
+	<div class="absolute left-12 top-26 w-52 select-none"
+		 style="height: calc(100vh - 102px); pointer-events: none">
+		<div class="flex flex-col h-full text-primary">
+			<ul class="flex flex-col h-full gap-y-5 py-5 mb-[22px]">
+				<li *ngFor="let navbarObject of this.navBarObjects; let last = last" [ngClass]="{'mt-auto': last}">
+					<div [ngStyle]="{'visibility': navbarObject.navGroupHoveredInCollapsedMode ? 'visible' : 'hidden'}"
+						 class="pointer-events-auto">
+
+						<!-- The relative parent of the floating nav container (keeps the container aligned with icons) -->
+						<div class="relative cursor-default flex h-7 mb-1">
+
+							<!-- The floating nav container OR the tooltip (sits on top of the relative parent div) -->
+							<div class="pl-3 -ml-1 rounded-md top-[-36px] absolute w-52"
+								 (mouseenter)="navbarObject.navGroupHoveredInCollapsedMode = true"
+								 (mouseleave)="navbarObject.navGroupHoveredInCollapsedMode = false"
+								 style="z-index: 1;">
+								<div *ngIf="navbarObject.navGroupItems.length > 1"
+									 class="flex flex-col w-full bg-white rounded-md shadow-xl border-borderColor border">
+
+									<!-- The header of the floating nav-list -->
+									<div class="flex h-7 rounded-t-md w-full bg-quaternary text-white truncate whitespace-nowrap">
+										<span class="flex px-3 items-center font-extrabold text-white">
+											{{navbarObject.navGroupName}}
+										</span>
+									</div>
+
+									<!-- The body of the floating nav-list -->
+									<div class="flex flex-col bg-white w-full text-quaternary pt-2"
+										 *ngFor="let navbarChildObject of navbarObject.navGroupItems, let last = last"
+										 [ngClass]="{'mb-2': last}">
+										<a [routerLink]="navbarChildObject.navItemUrl" class="rounded-md w-full"
+										   (click)="this.linkClickHandler(navbarObject)"
+										   [attr.aria-label]="navbarChildObject.navItemName + ' Page Link'"
+										   [attr.title]="navbarChildObject.navItemName  + ' Page Link'">
+											<div class="h-7 mx-auto p-[5px] justify-items-center w-44 hover:bg-borderColor rounded-md truncate">
+												<span>{{navbarChildObject.navItemName}}</span>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!-- If a NavGroup has only 1 item, we're showing just this little tooltip -->
+							<div *ngIf="navbarObject.navGroupItems.length < 2"
+								 class="absolute flex h-7 ml-2 rounded-md w-fit border border-borderColor bg-quaternary shadow-2xl truncate whitespace-nowrap"
+								 style="z-index: 1;">
+								<span class="flex px-3 font-extrabold items-center text-white">{{navbarObject.navGroupName}}</span>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+

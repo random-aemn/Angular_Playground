@@ -1,49 +1,367 @@
+/* You can add global styles to this file, and also import other style files */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
 
+// Merriweather is to be used by default on any non-headers
+body {
+  margin: 0;
+  font-family: Merriweather, sans-serif;
+}
 
-/* roboto-300 - latin */
+/* Define @font-face rules for each weight and style for LATO */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 100;
+  src: url('assets/fonts/lato/Lato-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 100;
+  src: url('assets/fonts/lato/Lato-ThinItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: url('./assets/fonts/roboto-v30-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  url('./assets/fonts/roboto-v30-latin-300.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('assets/fonts/lato/Lato-Light.ttf') format('truetype');
 }
 
-/* roboto-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 300;
+  src: url('assets/fonts/lato/Lato-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: url('./assets/fonts/roboto-v30-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  url('./assets/fonts/roboto-v30-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('assets/fonts/lato/Lato-Regular.ttf') format('truetype');
 }
 
-/* roboto-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url('./assets/fonts/roboto-v30-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  url('./assets/fonts/roboto-v30-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url('assets/fonts/lato/Lato-Italic.ttf') format('truetype');
 }
 
-/* roboto-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Roboto';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 700;
-  src: url('./assets/fonts/roboto-v30-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-  url('./assets/fonts/roboto-v30-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  src: url('assets/fonts/lato/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url('assets/fonts/lato/Lato-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('assets/fonts/lato/Lato-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url('assets/fonts/lato/Lato-BlackItalic.ttf') format('truetype');
+}
+
+/* Define @font-face rules for each weight and style for MERRIWEATHER */
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 300;
+  src: url('assets/fonts/merriweather/Merriweather-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 300;
+  src: url('assets/fonts/merriweather/Merriweather-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/merriweather/Merriweather-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: url('assets/fonts/merriweather/Merriweather-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: url('assets/fonts/merriweather/Merriweather-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 700;
+  src: url('assets/fonts/merriweather/Merriweather-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  src: url('assets/fonts/merriweather/Merriweather-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 900;
+  src: url('assets/fonts/merriweather/Merriweather-BlackItalic.ttf') format('truetype');
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.yellow-border {
+  border: 1px solid yellow
+}
+
+.white-border {
+  border: 1px dashed white;
+}
+
+.page-wrapper {
+  margin: 20px;
+}
+
+.page-title {
+  font-family: 'Lato';
+  font-weight: 500;
+  font-size: 18px;
+  white-space: nowrap; /* stop wrapping of page titles */
+}
+
+// The Angular Material <mat-form-field appearance="standard"> is no longer supported.  But, these 2 CSS classes make it look like "standard"
+.mat-mdc-form-field-focus-overlay {
+  // Make the angular-material fill *LOOK* like standard
+  background-color: white;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  // Make the angular-material fill *LOOK* like standard
+  background-color: white;
+}
+
+.small-grid-title {
+  font-family: 'Lato';
+  font-weight: 700;
+  font-size: 19px;
+  white-space: nowrap; /* stop wrapping of page titles */
+}
+
+.grid-text-cell-format {
+  font-family: 'Lato';
+  font-weight: 400;
+
+  margin-top: .25em; /* Fixes the bug with autoHeight not working in the ag-grid */
+}
+
+/**********   L I G H T      M O D E  **********/
+.light .searchBoxValid {
+  width: 300px; /* Set the width of the search box */
+  padding: 6px 0 6px 8px; /* The last padding value determines how far indented the textbox appears in the wrapper */
+  background-color: #dcdcdc; /* light white color */
+  border: 0;
+
+  /* Remove the outline that appears when clicking in textbox */
+  outline: none;
+
+  margin-left: 3px; /* Push the search box to the right inside the wrapper */
+}
+
+.light .searchBoxInvalid {
+  width: 300px; /* Set the width of the search box */
+  padding: 6px 0 6px 8px;
+  background-color: red; /* light white color */
+  color: white;
+  caret-color: white;
+  border: 0;
+
+  /* Remove the outline that appears when clicking in textbox */
+  outline: none;
+
+  margin-left: 3px; /* Push the search box to the right inside the wrapper */
+}
+
+.light .searchBoxWrapperValid {
+  background-color: #dcdcdc;
+  border-radius: 9px; /* Controls the rounded corners */
+  border: 0;
+
+  /* Center the search box and the icon */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.light .searchBoxWrapperInvalid {
+  background-color: red;
+  color: white;
+  border-radius: 9px; /* Controls the rounded corners */
+  border: 0;
+
+  /* Center the search box and the icon */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.light .searchBoxIcon {
+  color: black;
+  padding: 6px 6px 6px 1px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+/**************** LIGHT MODE for Quill Markdown Editor CSS Customizations ****************/
+.light .ql-toolbar {
+
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+20,ffffff+40,5994ca+75,5f9acf+100 */
+  background: linear-gradient(135deg, #ffffff 20%, #ffffff 40%, #5994ca 75%, #5f9acf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.light .ql-container {
+  min-width: 100%;
+}
+
+.light .ql-editor {
+  height: 150px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.author-time-detail {
+  font-family: 'Lato';
+  font-weight: 600;
+  font-size: 20px;
+  white-space: nowrap; /* stop wrapping of page titles */
+}
+
+button.disabled-button {
+  background-color: #ccc; /* Set the background color to gray */
+  cursor: not-allowed; /* Disable the pointer cursor */
+}
+
+.checkbox-correction {
+  margin-top: 2px;  // Offsets a vertical imperfection caused with custom cell renderers
+}
+
+.custom-disabled-button {
+  @apply text-gray-500 cursor-not-allowed transition-all ease-in-out duration-200;
+}
+
+// This is needed to disable hover styling on the object we're adding the disabled class to
+.custom-disabled-button:not([disabled]):hover {
+  @apply hover:text-gray-500 hover:bg-inherit;
+}
+
+.grid-header-centered .ag-header-cell-label {
+  justify-content: center !important;
+}
+
+.standard-grid-icon {
+  /* Set the size of icons used in the grid pages */
+  font-size: 23px;
+  margin-top: 2px !important;    /* if you change the font-size, then adjust the margin-top */
+}
+
+.grid-text-cell-format {
+  margin-top: 0;    /* Fixes the bug with autoHeight not working in the ag-grid */
+}
+
+.success-snackbar {
+  white-space: pre-wrap;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mdc-snackbar-container-color: #007a33;
+}
+
+.warning-snackbar {
+  white-space: pre-wrap;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mdc-snackbar-container-color: #ff8f00;
+}
+
+.error-snackbar {
+  white-space: pre-wrap;
+  --mdc-snackbar-supporting-text-color: white !important;
+  --mdc-snackbar-container-color: #c62828;
+}
+
+// This class is used for the create-alert-dialog
+.create-alert-dialog-class {
+  @apply mb-auto mt-10 transition-all duration-300 ease-in-out;
+}
+
+.progress-spinner-primary .mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #143AA2;
+}
+
+.progress-spinner-secondary .mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #D29D2B;
+}
+
+.progress-spinner-disabled .mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #777D8A;
+}
+
+.highlight-row-green {
+  background-color: #E0F6D9FF;
+}
+
+.highlight-row-low-priority {
+  background-color: #f7fcf7;
+}
+
+.highlight-row-medium-priority {
+  background-color: #fff8f1;
+}
+
+.highlight-row-high-priority {
+  background-color: #fff1f1;
+}
+
+.disabled-column {
+  cursor: not-allowed;
+  pointer-events: none;
+  display: none
 }

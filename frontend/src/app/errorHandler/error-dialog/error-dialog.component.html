@@ -1,0 +1,19 @@
+<div class="p-4 flex flex-col gap-4">
+  <span class="text-xl">{{this.data.status_code}}&nbsp;{{this.data.error_text}}</span>
+
+  <!-- Display the failed URL -->
+  <div>This URL failed: {{this.data.url}}</div>
+
+  <!-- Display the Error Message -->
+  <div>
+    {{this.data.message}}
+  </div>
+
+  <!-- Show the buttons -->
+  <div class="flex place-content-center">
+    <button rbr-solid-button (click)="this.onCancelClick()" aria-label="Close" title="Close">
+      <span>Close</span>
+    </button>
+  </div>
+
+</div>

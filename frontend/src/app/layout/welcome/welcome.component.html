@@ -1,0 +1,39 @@
+<div class="w-full px-5 h-full" id="watchForResize">
+	<div class="flex h-full flex-row w-full">
+		<!-- Text/Title Column -->
+		<div class="flex flex-col max-w-5xl gap-[5vh] my-auto p-5">
+
+            <button class="h-12 w-28 rounded-lg gradient-button font-thin" aria-label="Login" title="Login" style="font-family: Merriweather">
+                <span class="text-white text-lg font-extrabold">Login</span>
+            </button>
+
+			<!-- Welcome Title Row -->
+			<div class="text-5xl font-semibold tracking-tight" style="font-family: Merriweather;line-height: 3.7rem">
+				<span>Welcome to Angular App 16</span>
+
+			</div>
+
+			<!-- Welcome Description Row -->
+			<div>
+                <span style="font-family: Merriweather">
+                   Angular App 16 is a reference application
+                </span>
+			</div>
+
+			<!-- Analytics Graphic Row -->
+			<div>
+				<div class="ml-0 mr-5 welcome-gradient"></div>
+			</div>
+		</div>
+
+		<!-- Image Column -->
+		<div *ngIf="!this.compactPageMode"
+			 class=" h-full p-5 border flex-grow justify-center flex">
+
+			<div class="min-w-[550px] max-w-[950px] my-auto flex flex-grow">
+				<img src="./assets/images/logo.png" class="image-cover w-full h-full" alt="Welcome to CVF"
+					 title="Welcome to CVF">
+			</div>
+		</div>
+	</div>
+</div>

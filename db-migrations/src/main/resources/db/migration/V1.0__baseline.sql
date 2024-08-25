@@ -120,3 +120,22 @@ create index on user_preferences(userid);
 create index on user_preferences(userid, name, page);
 
 
+
+-----------------------------------------------------------------------------
+-- Create this table:  user_preferences_aud
+-----------------------------------------------------------------------------
+create table user_preferences_aud
+(
+    id             integer          null,
+    userid         integer          null,
+    page           varchar          null,
+    name           varchar(50)      null,
+    value          text             null,
+    timestamp      timestamp    not null,
+    username       varchar(100) not null,
+    audit_type     integer      not null,
+    transaction_id integer      not null
+);
+comment on table user_preferences_aud is 'The Audit table for the User_preferences table';
+
+

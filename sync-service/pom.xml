@@ -11,6 +11,8 @@
     <name>sync-service</name>
     <packaging>jar</packaging>
 
+
+
     <dependencyManagement>
         <dependencies>
 

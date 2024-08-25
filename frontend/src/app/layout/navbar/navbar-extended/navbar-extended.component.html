@@ -1,0 +1,71 @@
+<div class="h-full w-[250px] select-none">
+	<div class="flex flex-col bg-quaternary h-full text-white pr-4">
+
+		<!-- The full list of the nav-items -->
+		<ul class="flex flex-col h-full gap-y-5 py-5 overflow-auto hide-scrollbar">
+
+			<!-- Individual buttons/nav-items are rendered here-->
+			<li *ngFor="let navbarObject of this.navBarObjects; let last = last" [ngClass]="{'mt-auto': last}">
+
+				<!-- The contents of the parent nav-item (always visible) -->
+				<a href="{{navbarObject.navGroupItems[0].navItemUrl}}"
+				   routerLinkActive="false"
+				   (click)="this.handleNavGroupClickEvent(navbarObject)"
+				   (dblclick)="this.closeOtherNavGroupsAfterDoubleClick(navbarObject)"
+				   [attr.aria-label]="navbarObject.navGroupName + ' Page Link'"
+				   [attr.title]="navbarObject.navGroupName  + ' Page Link'">
+					<!-- TODO: Convert this button to a div (hasn't been done yet because of weird visual changes) -->
+					<button tabindex="-1" class="flex flex-row w-full hover:bg-iconHover hover:text-white mb-1"
+							[ngClass]="{'selected-item': navbarObject.navGroupOpenedState && this.navBarExtended, 'deselected-item': !navbarObject.navGroupOpenedState}" title="Navgroup Contents Indicator"
+                  aria-label="Navgroup Contents Indicator">
+						<i class="fa-solid text-lg w-6 mr-2 {{navbarObject.faIconTag}}"
+						   style="margin: 0 12px"></i>
+
+						<!-- The max width here stops the icon container from stretching/messing up alignment -->
+						<div class="overflow-hidden max-w-[150px] truncate text-xl font-extrabold">
+							<span>{{navbarObject.navGroupName}}</span>
+						</div>
+						<i *ngIf="navbarObject.navGroupItems.length > 1" class="fa-thin fa-angle-up"
+						   title="Navgroup Contents Indicator"
+						   aria-label="Navgroup Contents Indicator"
+						   [ngClass]="{'arrow-collapsed': !navbarObject.showChildren, 'arrow-extended': navbarObject.showChildren}"></i>
+					</button>
+				</a>
+
+
+				<!-- The list of the nav-item children (hidden by default) -->
+				<ul class="flex flex-col flex-grow" *ngIf="navbarObject.navGroupItems.length > 1"
+					[@expandCollapse]="navbarObject.showChildren ? 'expanded' : 'collapsed'">
+
+					<!-- Individual buttons/nav-item-children are rendered here (only if there is more than 1) -->
+					<li *ngFor="let navbarChildObject of navbarObject.navGroupItems" class="group">
+						<!-- This a-tag is here to enable right-clicking to open a new tab -->
+						<a [routerLink]="navbarChildObject.navItemUrl"
+						   [attr.aria-label]="navbarChildObject.navItemName + ' Page Link'"
+						   [attr.title]="navbarChildObject.navItemName  + ' Page Link'">
+							<div class="w-full hover:bg-iconHover"
+								 [ngClass]="{'selected-item': navbarChildObject.navItemOpenedState && this.navBarExtended, 'deselected-item': !navbarChildObject.navItemOpenedState}">
+								<div class="justify-start flex max-w-[245px] border-l pl-6 overflow-hidden text-white"
+									 style="margin-left: 24px">
+									<span class="truncate">{{navbarChildObject.navItemName}}</span>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<!-- The extend/collapse button item is rendered here at the bottom of the navbar (manually) -->
+		<ul class="flex flex-col mb-4">
+			<li class="hover:bg-iconHover hover:text-white">
+				<button class="flex flex-row w-full" (click)="this.toggleNavExtension()"
+						title="Collapse Navbar" aria-label="Collapse Navbar">
+					<i class="fa-solid text-lg w-6 mr-2 fa-angles-left"
+					   style="margin: 0 12px"></i>
+					<span class="max-w-[120px] truncate text-xl font-extrabold">Collapse</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>

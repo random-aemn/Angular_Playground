@@ -1,0 +1,25 @@
+/*
+ * Classification Banners have *SPECIFIC* colors
+ * NOTE:  Do **NOT** change these colors casually
+ */
+.cui-banner{
+  width: 100%;
+  line-height: 20px;     /* Determines the height of the banner */
+  font-family: Lato;
+  font-size: 12px !important;
+  font-weight: 500;
+  text-align: center;
+  background-color: #502b85;
+  color: white
+}
+
+.demo-banner{
+  @apply bg-classificationGreen;
+  width: 100%;
+  line-height: 20px;
+  font-family: Lato;
+  font-size: 12px !important;
+  font-weight: 500;
+  text-align: center;
+  color: white
+}
