@@ -78,25 +78,27 @@ Procedures
 
  2. Compile & Run the Web App
     a. Clone the project
-       unix> git clone https://github.com/traderres/angularApp16.git
-      
-    b. Initialize the local postgres database by following the steps in docs/howToInitializePostgresDatabase.dev.txt
+       terminal> git clone https://github.com/traderres/angularApp16.git
+ 
+    b. Checkout the correct branch
+       terminal> git checkout lesson6/add-database-and-es
+
+    c. Initialize the local postgres database by following the steps in docs/howToInitializePostgresDatabase.dev.txt
     
-    c. Build the project
-       unix> cd angularApp16
-       unix> git checkout lesson6/add-database-and-es
-       unix> mvn clean package -Pprod
+    d. Build the project
+       terminal> cd angularApp16
+       terminal> mvn clean package -Pprod
     
-    d. Nuke the database and rebuild ElasticSearch 
-       unix> java -Dapp.datasource.flyway-clean-on-startup=TRUE -jar ./sync-service/target/sync-service-1.0-SNAPSHOT-exec.jar
+    e. Nuke the database and rebuild ElasticSearch 
+       terminal> java -Dapp.datasource.flyway-clean-on-startup=TRUE -jar ./sync-service/target/sync-service-1.0-SNAPSHOT-exec.jar
        
-    e. Run the webapp
-       unix> java -jar ./backend/target/backend-1.0-SNAPSHOT-exec.jar 
+    f. Run the webapp
+       terminal> java -jar ./backend/target/backend-1.0-SNAPSHOT-exec.jar 
        
-    f. Connect to the webapp listening on port 8080
+    g. Connect to the webapp listening on port 8080
        Go to http://localhost:8080/app16
     
-    g. Stop the webapp by pressing Control-C
+    h. Stop the webapp by pressing Control-C
 
 
 ```
