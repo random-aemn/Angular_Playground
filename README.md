@@ -101,4 +101,9 @@ Procedures
     h. Stop the webapp by pressing Control-C
 
 
+ 3. Setup Debugging in IntelliJ Ultimate
+    a. Open the project in IntelliJ
+    b. <a href="https://github.com/traderres/webClass/blob/master/learnAngular/lessons_Angular16/howToDebugExistingWebapp.txt">Setup debugging (so you can debug TypeScript and Java code)</a>
+
+
 ```
