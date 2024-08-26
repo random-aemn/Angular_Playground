@@ -9,6 +9,8 @@ export enum Constants {
   SAMPLE_PAGE_ROUTE                          = "page/sample-page",
   SAMPLE_PAGE_ROUTE_2                        = "page/sample-page-2",
   USER_SETTINGS_ROUTE                        = "page/user-settings",
+  LIST_EXCEPTIONS_ROUTE                      = "page/admin/list-exceptions",
+  USER_ADMIN_ROUTE                           = "page/admin/user-admin",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

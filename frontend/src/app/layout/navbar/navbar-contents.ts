@@ -31,16 +31,16 @@ export const navbarContents: NavGroup[] = [
 		],
 	},
 	{
-		navGroupName: "Group #2",
+		navGroupName: "Administration",
 		faIconTag: "fa-file-chart-column",
 		navGroupItems: [
       {
-        navItemName: "Sample Page",
-        navItemUrl: Constants.SAMPLE_PAGE_ROUTE,
+        navItemName: "List Exceptions",
+        navItemUrl: Constants.LIST_EXCEPTIONS_ROUTE,
       },
       {
-        navItemName: "Sample Page 2",
-        navItemUrl: Constants.SAMPLE_PAGE_ROUTE_2,
+        navItemName: "User Admin2",
+        navItemUrl: Constants.USER_ADMIN_ROUTE,
       }
 		]
 	},

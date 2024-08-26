@@ -1,0 +1,48 @@
+How to Add a Page to this Angular App 16 Project
+------------------------------------------------
+ 1. Generate the component
+		terminal> cd frontend
+		terminal> ng generate component exercisePage1
+
+
+ 2. Add the route to constants.ts:         the route will be this:   page/exercise-page1
+	   1) Edit the constants.ts
+	   2) Add the route to it
+					EXERCISE_PAGE1_ROUTE =       'page/exercise-page1'
+
+
+ 3. Register the route with the Angular Router
+	   1) Edit the app.module.ts
+	   2) Add this line:
+				{ path: Constants.EXERCISE_PAGE1_ROUTE,     component:  ExercisePage1Component,        canActivate: [PageGuard.canActivate ]},
+
+
+ 4. Add the route to the database table:  ui_controls        (if using real security)
+	a. Edit V1.1__security.sql
+
+			insert into uicontrols(id, name) values( 4000, 'page/exercise-page1' );
+
+	b. Nuke your database via IntelliJ or by command-line
+
+          NOTE:  You can "Nuke your database" on the command line with these commands:
+                 terminal> cd db-migrations
+                 terminal> mvn flyway:clean                  # This tells flyway to erase all tables, rows, views, everything in the schema
+                 terminal> mvn flyway:migrate                # This tells flyway to run through all of flyway sql scripts  [with
+
+
+ 5. Add a link to the navbar (using that route)
+    a. Edit navbar.contents.ts
+
+	b. Add this entry
+            {
+                navItemName: "Exercise Page 1",
+                navItemUrl: Constants.EXERCISE_PAGE1_ROUTE,
+            },
+
+
+ 6. Use the debugger to verify that the navbar link works
+    a. Activate the Full Web App Debugger
+    b. Go to http://localhost:4200/
+	c. Look at the navbar
+	d. Verify that the navbar link exists
+

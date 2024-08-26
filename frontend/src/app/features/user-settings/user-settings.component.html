@@ -1,0 +1,48 @@
+<ng-container *ngIf="(this.userInfoObs | async) as userInfo">
+  <div class="w-full bg-backDropColor overflow-auto h-full">
+    <div class="flex flex-col w-full h-full">
+
+      <!-- Page Title -->
+      <div class="flex w-full bg-white h-[50px] border-headerBorderColor border-b-2 items-center py-5">
+        <div class="basis-1/2">
+          <span class="font-normal text-2xl ml-5 uppercase">User Settings -
+                   <ng-container *ngIf="(this.userInfoObs | async) as userInfoDTO">
+                   {{ userInfoDTO.displayedRoleName }}
+                  </ng-container>
+        </span>
+        </div>
+        <div class="basis-1/2 flex place-content-end">
+          <span class="font-normal text-2xl mr-5 uppercase">{{ userInfo.loggedInUserName }}</span>
+        </div>
+      </div>
+
+      <span class="font-extrabold text-xl pl-10 pt-10 uppercase">Header Themes</span>
+
+      <!-- Page Content Div Column -->
+      <div class="flex overflow-auto flex-col w-full pr-4 gap-2 pl-10 h-full">
+
+        <div class="m-5">
+          <ul role="list" class="mt-2 flex flex-row flex-wrap gap-5">
+            <li class="w-[400px] col-span-1 flex rounded-md shadow-sm h-20 clickable"
+                (click)="themeButtonClicked(headerDTO)" *ngFor="let headerDTO of listOfHeaderDTO">
+              <div
+                class="flex w-16 flex-shrink-0 items-center justify-center bg-white rounded-l-md text-xl font-medium text-white">
+                <i class="fa-solid fa-palette"
+                   [ngClass]="{'text-secondary': headerDTO.isSelected, 'text-primary': !headerDTO.isSelected}"></i>
+              </div>
+              <div
+                class="flex flex-1 items-center justify-between truncate rounded-r-md border-b border-r border-t border-borderColor"
+                [ngStyle]="{'background-image': 'url(' + headerDTO.url + ')'}"
+                style="background-repeat: no-repeat; background-size: cover; background-position: right">
+              </div>
+            </li>
+
+
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</ng-container>
+
