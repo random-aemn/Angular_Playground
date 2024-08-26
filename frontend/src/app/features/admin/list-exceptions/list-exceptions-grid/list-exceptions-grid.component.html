@@ -1,0 +1,204 @@
+<ng-container *ngIf="(this.bannerHeightInPixelsObs | async) as bannerHeight">
+
+    <div class="flex flex-col h-full w-full bg-backDropColor">
+      <!-- Page Title -->
+      <div class="flex w-full bg-white h-[50px] border-headerBorderColor border-b-2 items-center py-5">
+        <div class="flex-grow items-center">
+          <span class="font-normal text-2xl ml-5 uppercase">List Exceptions</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col h-full w-full bg-backDropColor px-5">
+
+
+        <!-- Page Content Div Column -->
+        <div class="flex flex-col w-full bg-white mt-5 h-full rounded-t-xl">
+
+          <!-- Button Row -->
+          <div class="flex h-10 w-full border-borderColor border-x rounded-t-xl items-center border-t pb-1 pl-1">
+
+            <!-- Grid Options Popup Menu -->
+            <button class="text-primary pl-2 pr-3 pt-1 hover:text-secondary"
+                    [matMenuTriggerFor]="filterMenu"
+                    type="button" title="Grid Options" aria-label="Grid Options">
+              <div class="flex flex-row gap-2 items-center">
+                <i class="fa-xl fa-solid fa-sliders"></i>
+                <span class="font-extrabold">Filters</span>
+              </div>
+            </button>
+
+            <mat-menu #filterMenu="matMenu">
+              <mat-radio-group>
+
+                <button mat-menu-item title="Reset Grid" aria-label="Reset Grid"
+                        (click)="this.resetGrid()">
+                  Reset Grid
+                </button>
+
+                <mat-divider></mat-divider>
+
+                <button mat-menu-item title="Filter to the last 1 day"
+                        aria-label="Filter to the last 1 day">
+                  <mat-radio-button [value]="this.LAST_ONE_DAY_FILTER"
+                                    title="Filter to the last 1 day"
+                                    [checked]="this.selectedFilter == this.LAST_ONE_DAY_FILTER"
+                                    (click)="this.applyFilterAndReloadGrid(this.LAST_ONE_DAY_FILTER)">
+                    Last 1 Day
+                  </mat-radio-button>
+                </button>
+
+                <button mat-menu-item title="Filter to the last 7 days"
+                        aria-label="Filter to the last 7 days">
+                  <mat-radio-button [value]="this.LAST_SEVEN_DAY_FILTER"
+                                    title="Filter to the last 7 days"
+                                    [checked]="this.selectedFilter == this.LAST_SEVEN_DAY_FILTER"
+                                    (click)="this.applyFilterAndReloadGrid(this.LAST_SEVEN_DAY_FILTER)">
+                    Last 7 Days
+                  </mat-radio-button>
+                </button>
+
+                <button mat-menu-item title="Filter to the last 30 days"
+                        aria-label="Filter to the last 30 days">
+                  <mat-radio-button [value]="this.LAST_THIRTY_DAY_FILTER"
+                                    title="Filter to the last 30 days"
+                                    [checked]="this.selectedFilter == this.LAST_THIRTY_DAY_FILTER"
+                                    (click)="this.applyFilterAndReloadGrid(this.LAST_THIRTY_DAY_FILTER)">
+                    Last 30 Days
+                  </mat-radio-button>
+                </button>
+
+                <button mat-menu-item title="Filter to year to date"
+                        aria-label="Filter to year to date">
+                  <mat-radio-button [value]="this.YEAR_TO_DATE_FILTER" title="Filter to year to date"
+                                    [checked]="this.selectedFilter == this.YEAR_TO_DATE_FILTER"
+                                    (click)="this.applyFilterAndReloadGrid(this.YEAR_TO_DATE_FILTER)">
+                    Year To Date
+                  </mat-radio-button>
+                </button>
+
+                <button mat-menu-item title="Show all records" aria-label="Show all records">
+                  <mat-radio-button [value]="this.SHOW_ALL_DATA_FILTER" title="Show all records"
+                                    [checked]="this.selectedFilter == this.SHOW_ALL_DATA_FILTER"
+                                    (click)="this.applyFilterAndReloadGrid(this.SHOW_ALL_DATA_FILTER)">
+                    Show All Records
+                  </mat-radio-button>
+                </button>
+              </mat-radio-group>
+            </mat-menu>
+
+          </div>
+
+          <div class="w-full h-full border-x border-t border-borderColor">
+            <!-- Dynamic Content Goes Here -->
+            <ag-grid-angular
+              style="width: 100%; height: 100%;"
+              class="ag-theme-balham"
+              [gridOptions]="this.gridOptions"
+              [defaultColDef]="this.defaultColDefs"
+              [columnDefs]="this.columnDefs"
+              (firstDataRendered)="this.firstDataRendered()"
+              (gridReady)="this.onGridReady($event)">
+            </ag-grid-angular>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  <!-- Help Side-drawer Container takes 50% of the page using w-1/2 -->
+  <!-- NOTE:  The top-20 pushes it down 80px                        -->
+
+  <div class="absolute top-5 right-0 w-1/2 bg-backDropColor border-black border-l-2 border-solid p-4 flex flex-col"
+       [ngClass]="{  'expanded-div': this.isSideBarVisible,
+				    'collapsed-div': !this.isSideBarVisible}"
+       [ngStyle]="{'height': 'calc(100vh - ' + 20 + 'px - ' + bannerHeight + ')'}">
+
+
+    <div class="grid grid-cols-2">
+      <!--ROW 1 START (HELP ICON BUTTON)-->
+      <div>
+        <!--Left Side of ROW 1-->
+        <span class="bolder text-2xl">Exception Details</span>
+      </div>
+
+      <div class="flex place-content-end">
+        <!-- Right Side of ROW !-->
+        <button type="button" mat-icon-button title="Hide" aria-label="Hide"
+                (click)="this.isSideBarVisible = false" color="primary" disableRipple>
+          <i style="font-size: 24px" class="fa-solid fa-circle-xmark"></i>
+        </button>
+
+      </div>
+
+    </div><!--ROW 1 END (HELP ICON BUTTON)-->
+
+
+    <div class="ml-4 mr-4">
+
+      <div class="flex flex-row gap-5 mt-2.5">
+        <!-- Error Id -->
+        <mat-form-field class="w-[65px]" floatLabel="always" subscriptSizing="dynamic">
+          <mat-label>Id</mat-label>
+          <input type="text" title="Error Id" aria-label="Error Id" matInput readonly
+                 value="{{this.selectedRow.id}}">
+        </mat-form-field>
+
+        <!-- App Version -->
+        <mat-form-field class="w-[170px]" floatLabel="always" subscriptSizing="dynamic">
+          <mat-label>Version</mat-label>
+          <input type="text" title="App Version" aria-label="App Version" matInput readonly
+                 value="{{this.selectedRow.app_version}}">
+        </mat-form-field>
+
+        <!-- Event Date -->
+        <mat-form-field class="w-[170px]" floatLabel="always" subscriptSizing="dynamic">
+          <mat-label>Event Date</mat-label>
+          <input type="text" title="Event Date" aria-label="Event Date" matInput readonly
+                 value="{{this.selectedRow.event_date}}">
+        </mat-form-field>
+
+        <!-- User Name -->
+        <mat-form-field class="w-[250px]" floatLabel="always" subscriptSizing="dynamic">
+          <mat-label>User Name</mat-label>
+          <input type="text" title="User Full Name" aria-label="User Full Name" matInput readonly
+                 value="{{this.selectedRow.user_cert_name}}">
+        </mat-form-field>
+
+        <!-- URL -->
+        <mat-form-field class="w-[250px]" floatLabel="always" subscriptSizing="dynamic">
+          <mat-label>URL</mat-label>
+          <input type="text" title="URL" aria-label="URL" matInput readonly value="{{this.selectedRow.url}}">
+        </mat-form-field>
+      </div>
+
+
+      <ng-container *ngIf="this.selectedRow.message != null">
+        <!-- Error Message Header -->
+        <p style="margin-top: 20px" class="bolder text-xl">Error Message</p>
+
+        <!-- Show the cause info in a courier font -->
+        <pre>{{this.selectedRow.message }}</pre>
+      </ng-container>
+
+
+      <ng-container *ngIf="this.selectedRow.cause != null">
+        <!-- Cause Header -->
+        <p style="margin-top: 20px" class="bolder text-xl">Cause</p>
+
+        <!-- Show the cause info in a courier font -->
+        <pre>{{this.selectedRow.cause }}</pre>
+      </ng-container>
+
+
+      <!-- Stack Trace Header -->
+      <p style="margin-top: 20px" class="bolder text-xl">Stack Trace</p>
+
+      <!-- Show the stack trace in a courier font -->
+      <pre>{{this.selectedRow.stack_trace }}</pre>
+    </div>
+
+  </div>
+</ng-container>

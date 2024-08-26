@@ -62,6 +62,9 @@
               "./node_modules/@fortawesome/fontawesome-pro/css/sharp-light.min.css",
               "./node_modules/@fortawesome/fontawesome-pro/css/sharp-regular.min.css",
               "./node_modules/@fortawesome/fontawesome-pro/css/sharp-solid.min.css",
+              "./node_modules/ag-grid-enterprise/styles/ag-grid.min.css",
+              "./node_modules/ag-grid-enterprise/styles/ag-theme-alpine.min.css",
+              "./node_modules/ag-grid-enterprise/styles/ag-theme-balham.min.css",
               "src/styles.scss"
             ],
             "scripts": [],

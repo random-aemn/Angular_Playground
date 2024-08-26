@@ -1,6 +1,6 @@
 package com.lessons.services;
 
-import com.lessons.models.preferences.GetExceptionDTO;
+import com.lessons.models.GetExceptionDTO;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import org.slf4j.Logger;

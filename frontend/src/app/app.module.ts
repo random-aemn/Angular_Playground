@@ -38,21 +38,23 @@ import {ClassificationBannerComponent} from "./layout/classification-banner/clas
 import {HeaderComponent} from "./layout/header/header.component";
 import {NavbarExtendedComponent} from "./layout/navbar/navbar-extended/navbar-extended.component";
 import {NavbarCollapsedComponent} from "./layout/navbar/navbar-collapsed/navbar-collapsed.component";
-import { ListExceptionsComponent } from './features/admin/list-exceptions/list-exceptions.component';
 import { UserAdminComponent } from './features/admin/user-admin/user-admin.component';
 import { UserSettingsComponent } from './features/user-settings/user-settings.component';
 import {PageGuard} from "./guards/page.guard";
+import {AgGridModule} from "ag-grid-angular";
+import { ListExceptionsGridComponent } from './features/admin/list-exceptions/list-exceptions-grid/list-exceptions-grid.component';
+import { ListExceptionsActionRendererComponent } from './features/admin/list-exceptions/list-exceptions-action-renderer/list-exceptions-action-renderer.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
 const appRoutes: Routes = [
-  { path:  Constants.SAMPLE_PAGE_ROUTE,       component: SamplePageComponent,       canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.SAMPLE_PAGE_ROUTE_2,     component: SamplePage2Component,      canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.LIST_EXCEPTIONS_ROUTE,   component: ListExceptionsComponent,   canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.USER_ADMIN_ROUTE,        component: UserAdminComponent,        canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.USER_SETTINGS_ROUTE,     component: UserSettingsComponent,     canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.SAMPLE_PAGE_ROUTE,       component: SamplePageComponent,          canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.SAMPLE_PAGE_ROUTE_2,     component: SamplePage2Component,         canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.LIST_EXCEPTIONS_ROUTE,   component: ListExceptionsGridComponent,  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.USER_ADMIN_ROUTE,        component: UserAdminComponent,           canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.USER_SETTINGS_ROUTE,     component: UserSettingsComponent,        canActivate: [PageGuard.canActivate ] },
 
-  { path:  '',                                component: WelcomeComponent,          canActivate: [PageGuard.canActivate ] },
+  { path:  '',                                component: WelcomeComponent,             canActivate: [PageGuard.canActivate ] },
   { path:  '**',                              component: NotFoundComponent }
 ];
 
@@ -66,11 +68,13 @@ const appRoutes: Routes = [
     HeaderComponent,
     NavbarExtendedComponent,
     NavbarCollapsedComponent,
-    ListExceptionsComponent,
     UserAdminComponent,
-    UserSettingsComponent
+    UserSettingsComponent,
+    ListExceptionsGridComponent,
+    ListExceptionsActionRendererComponent
   ],
   imports: [
+    AgGridModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

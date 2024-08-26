@@ -15,5 +15,6 @@ export enum Constants {
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)
   HEADER_THEME_PREFERENCE_NAME               = "header_theme_state",
-
+  COLUMN_STATE_PREFERENCE_NAME               = "column_state",
+  EXCEPTION_FILTER_PREFERENCE_NAME           = "exceptions_filter",
 }

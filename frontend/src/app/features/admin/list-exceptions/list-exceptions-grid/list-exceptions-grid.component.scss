@@ -1,0 +1,32 @@
+
+.collapsed-div {
+  /* Collapse over 500 milliseconds */
+  @apply w-0 overflow-hidden opacity-0 transition-all ease-in-out  duration-500
+}
+
+.expanded-div {
+  /* Expand over 500 milliseconds.  We don't need to set the width as the original div has w-2/5 */
+  @apply overflow-hidden opacity-100 transition-all  ease-in-out  duration-500 z-50;
+}
+
+:host ::ng-deep  .mdc-text-field {
+  /* Reduce the padding around the text form fields */
+  padding: 0 !important;
+}
+
+:host ::ng-deep .mdc-text-field--filled {
+  /* Hide the bar on the bottom of the text form fields */
+  --mdc-filled-text-field-active-indicator-height: 0;
+  --mdc-filled-text-field-focus-active-indicator-height: 0;
+}
+
+// These are required to prevent the double-thick border effect on the page
+:host {
+  ::ng-deep .ag-header {
+    background-color: white !important;
+  }
+
+  ::ng-deep .ag-root-wrapper {
+    border: none !important;
+  }
+}

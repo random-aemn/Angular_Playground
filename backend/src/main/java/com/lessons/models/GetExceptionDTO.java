@@ -1,4 +1,4 @@
-package com.lessons.models.preferences;
+package com.lessons.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
