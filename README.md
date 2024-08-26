@@ -1,4 +1,4 @@
-# AngularApp16 / Lesson 7 / Setup the Navigation Bar using Tailwind
+# AngularApp16 / Lesson 8 / Add ag-grid
 
 <pre>
 Assumptions
@@ -82,7 +82,7 @@ Procedures
  
     b. Checkout the correct branch
        terminal> cd angularApp16
-       terminal> git checkout lesson7/setup-navbar-using-tailwind
+       terminal> git checkout lesson8/add-grid
 
     c. Initialize the local postgres database by following the steps in docs/howToInitializePostgresDatabase.dev.txt
     
