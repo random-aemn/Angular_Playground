@@ -41,6 +41,22 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "User Admin2",
         navItemUrl: Constants.USER_ADMIN_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 1",
+        navItemUrl: Constants.EXERCISE_1A_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 1b",
+        navItemUrl: Constants.EXERCISE_1B_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 1C / Registration Approved",
+        navItemUrl: Constants.EXERCISE_1C_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 1D / HTML over Image",
+        navItemUrl: Constants.EXERCISE_1D_ROUTE,
       }
 		]
 	},
