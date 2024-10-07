@@ -89,6 +89,7 @@ insert into uicontrols(id, name) values(5000, 'page/exercise-1a');
 insert into uicontrols(id, name) values(5001, 'page/exercise1b');
 insert into uicontrols(id, name) values(5002, 'page/registration/approved');
 insert into uicontrols(id, name) values(5003, 'page/html-over-image');
+insert into uicontrols(id, name) values(5004, 'page/my-settings');
 
 
 

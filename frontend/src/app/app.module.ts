@@ -48,6 +48,7 @@ import { Exercise1aComponent } from './exercise1a/exercise1a.component';
 import { ExercisePage1bComponent } from './exercise-page1b/exercise-page1b.component';
 import { RegistrationApprovedComponent } from './registration-approved/registration-approved.component';
 import { HtmlOverImageComponent } from './html-over-image/html-over-image.component';
+import { MySettingsComponent } from './my-settings/my-settings.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_1B_ROUTE,       component: ExercisePage1bComponent,            canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_1C_ROUTE,       component: RegistrationApprovedComponent,      canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_1D_ROUTE,       component: HtmlOverImageComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_2_MY_Settings_ROUTE,       component: MySettingsComponent,             canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                component: WelcomeComponent,                   canActivate: [PageGuard.canActivate ] },
   { path:  '**',                              component: NotFoundComponent }
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     Exercise1aComponent,
     ExercisePage1bComponent,
     RegistrationApprovedComponent,
-    HtmlOverImageComponent
+    HtmlOverImageComponent,
+    MySettingsComponent
   ],
   imports: [
     AgGridModule,

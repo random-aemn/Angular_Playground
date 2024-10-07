@@ -30,6 +30,8 @@ export const navbarContents: NavGroup[] = [
 			}
 		],
 	},
+
+
 	{
 		navGroupName: "Administration",
 		faIconTag: "fa-file-chart-column",
@@ -57,6 +59,10 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "Exercise Page 1D / HTML over Image",
         navItemUrl: Constants.EXERCISE_1D_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 2 / My Settings",
+        navItemUrl: Constants.EXERCISE_2_MY_Settings_ROUTE,
       }
 		]
 	},

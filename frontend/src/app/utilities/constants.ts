@@ -15,6 +15,7 @@ export enum Constants {
   EXERCISE_1B_ROUTE                          = "page/exercise1b",
   EXERCISE_1C_ROUTE                          = "page/registration/approved",
   EXERCISE_1D_ROUTE                          = "page/html-over-image",
+  EXERCISE_2_MY_Settings_ROUTE               = "page/my-settings",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

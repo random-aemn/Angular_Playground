@@ -1,13 +1,16 @@
 <!-- Believe items-center is unnecessary    -->
-<div class="flex items-center place-content-center">
-
+<!--  In order to pace content within a div, you MUST have class="flex" in the opening tag    -->
+<!-- "class="" has to do with things having to do with html or css"-->
+<div class="h-full">
 <!--  Parent Div      -->
-  <div class="flex flex-col w-1/2 relative">
-
-    <img src="./assets/images/Exercise_1D_Image.png" class="mt-[50px]">
-
+<!--  Relative is about positioning - with relative in the parent class
+     and absolute in the child class.  Relative is relative to the normal position-->
+  <div class="flex flex-col w-1/2 relative mt-[50px]">
+    <img src="./assets/images/Exercise_1D_Image.png">
 <!--    Child Div   -->
-    <div class="absolute top-0 left-0 w-full h-full flex place-content-center">
+<!--    Absolute does CJC   -->
+    <div class="absolute top-0 left-0 h-full w-full flex place-content-center items-center">
+<!--      title="yada yada" defines what text appears with a mouseover (infotip)    -->
       <button type="button"
               aria-label="Login"
               title="Login"
@@ -15,8 +18,7 @@
         Login
       </button>
     </div>
-
-    <div>
+  </div>
       <div class="flex place-content-center">
         If you need help logging in
       </div>
@@ -27,18 +29,9 @@
                 mat-raised-button>
           Help
         </button>
-
       </div>
-
-
-    </div>
-
-  </div>
 </div>
-
-
 <br>
-
 <div>
   Text over image
 </div>
