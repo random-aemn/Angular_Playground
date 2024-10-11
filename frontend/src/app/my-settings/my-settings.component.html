@@ -1,0 +1,95 @@
+<div class="m-2.5">
+
+  <div class="grid grid-cols-2">
+    <div style="font-family: 'Lucida Calligraphy'"
+          class="font-bold text-2xl">
+      My Setting
+    </div>
+    <div class="flex place-content-end">
+      <button class="button"
+      title="Help"
+      aria-label="Help"
+      mat-raised-button
+      color="primary">
+        Help
+      </button>
+
+    </div>
+  </div>
+
+  <div class="flex flex-row m-2.5">
+
+    <div class="flex-grow">
+      <form class="mat-form-field">
+        <mat-form-field class="flex-grow w-[500px]">
+          <mat-label>Full Name:</mat-label>
+          <input matInput type="text">
+          <mat-hint>Bob Woodward</mat-hint>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="flex flex-row m-2.5">
+
+    <div class="flex-grow">
+      <mat-form-field class="w-[500px]">
+        <mat-label>Starting Page:</mat-label>
+        <mat-select title="Full Name" aria-label="Full Name">
+          <mat-option value="1">Default Welcome Page</mat-option>
+          <mat-option value="2">My Dashboard</mat-option>
+          <mat-option value="3">GCA / List All Contracts</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div class="flex flex-row m-2.5">
+
+    <div class="flex-grow">
+      <mat-form-field class="w-[500px]">
+        <mat-label>Time Zone:</mat-label>
+        <mat-select title="Time Zone" aria-label="Time Zone">
+          <mat-option value="1">EDT / Eastern Daylight Time</mat-option>
+          <mat-option value="2">CDT / Central Daylight Time</mat-option>
+          <mat-option value="3">PDT / Pacific Daylight Time</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+<!--      <mat-select>-->
+<!--        <mat-option>EDT / Eastern Daylight Time</mat-option>-->
+<!--        <mat-option>CDT / Central Daylight Time</mat-option>-->
+<!--        <mat-option>PDT / Pacific Daylight Time</mat-option>-->
+<!--      </mat-select>-->
+    </div>
+  </div>
+
+  <div class="flex place-content-center gap-2.5">
+
+
+  <div>
+    <button class="button"
+    title="Reset"
+    aria-label="Reset"
+    mat-raised-button
+    color="warn">
+      Reset
+    </button>
+  </div>
+  <div>
+    <button class="button"
+            title="Save"
+            aria-label="Save"
+            mat-raised-button
+            color="primary">
+      Save
+    </button>
+    </div>
+
+  </div>
+
+
+</div>
+

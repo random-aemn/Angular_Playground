@@ -1,0 +1,101 @@
+<div class="m-2.5">
+  <div class="grid grid-cols-2 mb-2.5">
+    <div style="font-family: 'Lucida Calligraphy'" class="font-extrabold text-3xl">
+      Stock Trade
+    </div>
+    <div class="flex place-content-end">
+      <button class="button" title="Help" aria-label="Help" mat-raised-button color="primary">Help</button>
+    </div>
+  </div>
+
+
+
+<!-- Div for the body of the page-->
+<div class="grid grid-cols-3 gap-2.5">
+  <!--Action Dropdown     -->
+  <div>
+  <mat-form-field class="flex w-full">
+    <mat-label>Action Dropdown:</mat-label>
+    <mat-select title="Action Dropdown" aria-label="Action Dropdown">
+      <mat-option value="1">Buy Stock</mat-option>
+      <mat-option value="2">Buy Mutual Fund</mat-option>
+      <mat-option value="3">Sell Stock</mat-option>
+      <mat-option value="4">Sell Mutual Fund</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+<!--  Quantity Textbox    -->
+  <div>
+    <form>
+      <mat-form-field title="Quantity" aria-label="Quantity" class="flex w-full">
+        <mat-label>Quantity:</mat-label>
+        <input matInput type="text">
+        <mat-hint>5*</mat-hint>
+
+      </mat-form-field>
+    </form>
+
+  </div>
+
+<!--  Symbol Textbox    -->
+
+  <div>
+    <form>
+      <mat-form-field title="Symbol" aria-label="Symbol" class="flex w-full">
+        <mat-label>Symbol:</mat-label>
+        <input matInput type="text">
+        <mat-hint>IBM</mat-hint>
+
+      </mat-form-field>
+    </form>
+  </div>
+
+<!--  Order Type Dropdown   -->
+  <div>
+    <mat-form-field class="flex w-full">
+      <mat-label>Order Type:</mat-label>
+      <mat-select title="Order Type" aria-label="Order Type">
+        <mat-option value="1">Market Order</mat-option>
+        <mat-option value="2">Limit Order</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+<!--  Limit Price Textbox   -->
+  <div>
+    <form>
+      <mat-form-field title="Limit Price" aria-label="Limit Price" class="flex w-full">
+        <mat-label>Limit Price:</mat-label>
+        <input matInput type="text">
+        <mat-hint>85</mat-hint>
+      </mat-form-field>
+    </form>
+  </div>
+
+</div>
+
+<!--  Bottom Bar    -->
+<div class="mt-5 flex flex-row gap-5 place-content-center">
+  <div>
+    <button class="button" title="Reset" aria-label="Reset" mat-raised-button color="warn">
+      Reset
+    </button>
+  </div>
+
+  <div>
+    <button class="button" title="Review Order" aria-label="Review Order" mat-raised-button color="accent">
+      Review Order
+    </button>
+  </div>
+
+  <div class="flex items-center text-xl">
+    <a [routerLink]=[] (click)="this.saveFormHyperlink()"
+       class="underline text-blue-500 hover:text-purple-700" >
+      Save for Later
+    </a>
+  </div>
+</div>
+
+</div>

@@ -44,6 +44,13 @@ export const navbarContents: NavGroup[] = [
         navItemName: "User Admin2",
         navItemUrl: Constants.USER_ADMIN_ROUTE,
       },
+		]
+	},
+
+  {
+		navGroupName: "Class Exercises",
+		faIconTag: "fa-sharp-duotone fa-solid fa-signs-post",
+		navGroupItems: [
       {
         navItemName: "Exercise Page 1",
         navItemUrl: Constants.EXERCISE_1A_ROUTE,
@@ -63,6 +70,18 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "Exercise Page 2 / My Settings",
         navItemUrl: Constants.EXERCISE_2_MY_Settings_ROUTE,
+      },
+      {
+        navItemName: "Exercise Page 3a / Stock Trade",
+        navItemUrl: Constants.EXERCISE_3_STOCK_TRADES,
+      },
+      {
+        navItemName: "Exercise Page 4 / Responsive Layout",
+        navItemUrl: Constants.EXERCISE_4_RESPONSIVE_LAYOUT,
+      },
+      {
+        navItemName: "Exercise Page 5 / Variable Height",
+        navItemUrl: Constants.EXERCISE_5_VARIABLE_HEIGHT,
       }
 		]
 	},

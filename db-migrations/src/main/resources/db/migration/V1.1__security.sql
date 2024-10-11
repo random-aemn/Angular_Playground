@@ -90,6 +90,9 @@ insert into uicontrols(id, name) values(5001, 'page/exercise1b');
 insert into uicontrols(id, name) values(5002, 'page/registration/approved');
 insert into uicontrols(id, name) values(5003, 'page/html-over-image');
 insert into uicontrols(id, name) values(5004, 'page/my-settings');
+insert into uicontrols(id, name) values(5005, 'page/stock-trades');
+insert into uicontrols(id, name) values(5006, 'page/responsive-layout');
+insert into uicontrols(id, name) values(5007, 'page/variable-height');
 
 
 

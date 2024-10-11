@@ -49,20 +49,26 @@ import { ExercisePage1bComponent } from './exercise-page1b/exercise-page1b.compo
 import { RegistrationApprovedComponent } from './registration-approved/registration-approved.component';
 import { HtmlOverImageComponent } from './html-over-image/html-over-image.component';
 import { MySettingsComponent } from './my-settings/my-settings.component';
+import { StockTradesComponent } from './stock-trades/stock-trades.component';
+import { ResponsiveLayoutComponent } from './responsive-layout/responsive-layout.component';
+import { VariableHeightComponent } from './variable-height/variable-height.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
 const appRoutes: Routes = [
-  { path:  Constants.SAMPLE_PAGE_ROUTE,       component: SamplePageComponent,                canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.SAMPLE_PAGE_ROUTE_2,     component: SamplePage2Component,               canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.LIST_EXCEPTIONS_ROUTE,   component: ListExceptionsGridComponent,        canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.USER_ADMIN_ROUTE,        component: UserAdminComponent,                 canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.USER_SETTINGS_ROUTE,     component: UserSettingsComponent,              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_1A_ROUTE,       component: Exercise1aComponent,                canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_1B_ROUTE,       component: ExercisePage1bComponent,            canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_1C_ROUTE,       component: RegistrationApprovedComponent,      canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_1D_ROUTE,       component: HtmlOverImageComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.SAMPLE_PAGE_ROUTE,                  component: SamplePageComponent,                canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.SAMPLE_PAGE_ROUTE_2,                component: SamplePage2Component,               canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.LIST_EXCEPTIONS_ROUTE,              component: ListExceptionsGridComponent,        canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.USER_ADMIN_ROUTE,                   component: UserAdminComponent,                 canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.USER_SETTINGS_ROUTE,                component: UserSettingsComponent,              canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_1A_ROUTE,                  component: Exercise1aComponent,                canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_1B_ROUTE,                  component: ExercisePage1bComponent,            canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_1C_ROUTE,                  component: RegistrationApprovedComponent,      canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_1D_ROUTE,                  component: HtmlOverImageComponent,             canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_2_MY_Settings_ROUTE,       component: MySettingsComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_3_STOCK_TRADES,            component: StockTradesComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_4_RESPONSIVE_LAYOUT,            component: ResponsiveLayoutComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_5_VARIABLE_HEIGHT,            component: VariableHeightComponent,             canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                component: WelcomeComponent,                   canActivate: [PageGuard.canActivate ] },
   { path:  '**',                              component: NotFoundComponent }
@@ -86,7 +92,10 @@ const appRoutes: Routes = [
     ExercisePage1bComponent,
     RegistrationApprovedComponent,
     HtmlOverImageComponent,
-    MySettingsComponent
+    MySettingsComponent,
+    StockTradesComponent,
+    ResponsiveLayoutComponent,
+    VariableHeightComponent
   ],
   imports: [
     AgGridModule,
