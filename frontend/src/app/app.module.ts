@@ -52,6 +52,8 @@ import { MySettingsComponent } from './my-settings/my-settings.component';
 import { StockTradesComponent } from './stock-trades/stock-trades.component';
 import { ResponsiveLayoutComponent } from './responsive-layout/responsive-layout.component';
 import { VariableHeightComponent } from './variable-height/variable-height.component';
+import { FakeHolyGrailComponent } from './fake-holy-grail/fake-holy-grail.component';
+import { RealHolyGrailComponent } from './real-holy-grail/real-holy-grail.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -65,10 +67,12 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_1B_ROUTE,                  component: ExercisePage1bComponent,            canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_1C_ROUTE,                  component: RegistrationApprovedComponent,      canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_1D_ROUTE,                  component: HtmlOverImageComponent,             canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_2_MY_Settings_ROUTE,       component: MySettingsComponent,             canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_3_STOCK_TRADES,            component: StockTradesComponent,             canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_4_RESPONSIVE_LAYOUT,            component: ResponsiveLayoutComponent,             canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_5_VARIABLE_HEIGHT,            component: VariableHeightComponent,             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_2_MY_Settings_ROUTE,       component: MySettingsComponent,                canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_3_STOCK_TRADES,            component: StockTradesComponent,               canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_4_RESPONSIVE_LAYOUT,            component: ResponsiveLayoutComponent,     canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_5_VARIABLE_HEIGHT,            component: VariableHeightComponent,         canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_5B_HOLY_GRAIL,            component: FakeHolyGrailComponent,              canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_5B_HOLY_GRAIL_REAL,            component: RealHolyGrailComponent,              canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                component: WelcomeComponent,                   canActivate: [PageGuard.canActivate ] },
   { path:  '**',                              component: NotFoundComponent }
@@ -95,8 +99,12 @@ const appRoutes: Routes = [
     MySettingsComponent,
     StockTradesComponent,
     ResponsiveLayoutComponent,
-    VariableHeightComponent
+    VariableHeightComponent,
+    FakeHolyGrailComponent,
+    RealHolyGrailComponent
   ],
+
+
   imports: [
     AgGridModule,
     BrowserModule,

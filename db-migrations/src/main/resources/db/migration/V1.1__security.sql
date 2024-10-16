@@ -93,6 +93,8 @@ insert into uicontrols(id, name) values(5004, 'page/my-settings');
 insert into uicontrols(id, name) values(5005, 'page/stock-trades');
 insert into uicontrols(id, name) values(5006, 'page/responsive-layout');
 insert into uicontrols(id, name) values(5007, 'page/variable-height');
+insert into uicontrols(id, name) values(5008, 'page/holy-grail-not');
+insert into uicontrols(id, name) values(5009, 'page/holy-grail-real');
 
 
 

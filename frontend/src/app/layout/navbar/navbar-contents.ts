@@ -82,6 +82,14 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "Exercise Page 5 / Variable Height",
         navItemUrl: Constants.EXERCISE_5_VARIABLE_HEIGHT,
+      },
+      {
+        navItemName: "Exercise Page 5b / Fake Holy Grail",
+        navItemUrl: Constants.EXERCISE_5B_HOLY_GRAIL,
+      },
+      {
+        navItemName: "Exercise Page 5b / Real Holy Grail",
+        navItemUrl: Constants.EXERCISE_5B_HOLY_GRAIL_REAL,
       }
 		]
 	},

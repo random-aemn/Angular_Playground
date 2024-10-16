@@ -19,6 +19,8 @@ export enum Constants {
   EXERCISE_3_STOCK_TRADES                    = "page/stock-trades",
   EXERCISE_4_RESPONSIVE_LAYOUT               = "page/responsive-layout",
   EXERCISE_5_VARIABLE_HEIGHT                 = "page/variable-height",
+  EXERCISE_5B_HOLY_GRAIL                     = "page/holy-grail-not",
+  EXERCISE_5B_HOLY_GRAIL_REAL                = "page/holy-grail-real",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)
