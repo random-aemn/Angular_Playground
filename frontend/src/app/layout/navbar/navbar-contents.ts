@@ -90,6 +90,14 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "Exercise Page 5b / Real Holy Grail",
         navItemUrl: Constants.EXERCISE_5B_HOLY_GRAIL_REAL,
+      },
+      {
+        navItemName: "Exercise Page 5c / Scroll into view",
+        navItemUrl: Constants.EXERCISE_5C_SCROLL_INTO_VIEW,
+      },
+      {
+        navItemName: "Exercise Page 6B / Slide Out Help",
+        navItemUrl: Constants.EXERCISE_6B_SLIDE_OUT_DRAWER,
       }
 		]
 	},

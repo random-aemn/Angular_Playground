@@ -21,6 +21,8 @@ export enum Constants {
   EXERCISE_5_VARIABLE_HEIGHT                 = "page/variable-height",
   EXERCISE_5B_HOLY_GRAIL                     = "page/holy-grail-not",
   EXERCISE_5B_HOLY_GRAIL_REAL                = "page/holy-grail-real",
+  EXERCISE_5C_SCROLL_INTO_VIEW                = "page/scroll-into-view",
+  EXERCISE_6B_SLIDE_OUT_DRAWER                = "page/slide-out-help",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

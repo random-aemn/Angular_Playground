@@ -95,6 +95,8 @@ insert into uicontrols(id, name) values(5006, 'page/responsive-layout');
 insert into uicontrols(id, name) values(5007, 'page/variable-height');
 insert into uicontrols(id, name) values(5008, 'page/holy-grail-not');
 insert into uicontrols(id, name) values(5009, 'page/holy-grail-real');
+insert into uicontrols(id, name) values(5010, 'page/scroll-into-view');
+insert into uicontrols(id, name) values(5011, 'page/slide-out-help');
 
 
 
