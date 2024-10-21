@@ -1,0 +1,14 @@
+//div {
+//  border: 1px dashed black;
+//}
+
+.collapsed-div{
+  @apply transition-all ease-in-out duration-[2000ms] w-0 overflow-hidden opacity-0;
+
+}
+
+.expanded-div{
+
+  @apply transition-all ease-in-out duration-[2000ms] opacity-100 z-10;
+
+}

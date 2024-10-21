@@ -1,0 +1,66 @@
+<div class="grid grid-cols-2 m-2.5 p-2.5">
+  <div class="text-2xl text-purple-700">
+    Slide out help
+  </div>
+  <div class="flex place-content-end">
+    <button mat-raised-button title="Help" aria-label="Help" (click)="openHelp()">Help</button>
+  </div>
+</div>
+
+<div>
+  <div class="flex flex-row m-2.5">
+
+    <div class="flex-grow">
+      <form class="mat-form-field">
+        <mat-form-field class="flex-grow w-[500px]">
+          <mat-label>Username:</mat-label>
+          <input matInput type="text">
+          <mat-hint>Yakko Warner</mat-hint>
+        </mat-form-field>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="flex flex-row m-2.5">
+
+    <div class="flex-grow">
+      <mat-form-field class="w-[500px]">
+        <mat-label>User Type:</mat-label>
+        <mat-select title="User Type" aria-label="User Type">
+          <mat-option value="1">Gov't User</mat-option>
+          <mat-option value="2">Industry User</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="flex place-content-center gap-5">
+    <div>
+      <button mat-raised-button title="Reset" aria-label="Reset">
+        Reset
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button title="Submit" aria-label="Submit">
+        Submit
+      </button>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="w-2/5 absolute top-5 right-0 bg-blue-500 border-l-2 border-l-black" [ngClass]="{
+'expanded-div': this.helpBarIsShowing == true,
+'collapsed-div': this.helpBarIsShowing == false
+}" style="height: calc(100vh - 20px)">
+  <div class="grid grid-cols-2">
+    <div class="text-2xl">Help</div>
+    <div class="flex place-content-end">
+      <button mat-raised-button (click)="closeHelp()">Close</button>
+    </div>
+  </div>
+
+  <div class="flex place-content-center">Help Nav</div>
+</div>
