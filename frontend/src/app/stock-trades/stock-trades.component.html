@@ -14,9 +14,13 @@
 <div class="grid grid-cols-3 gap-2.5">
   <!--Action Dropdown     -->
   <div>
-  <mat-form-field class="flex w-full">
-    <mat-label>Action Dropdown:</mat-label>
-    <mat-select title="Action Dropdown" aria-label="Action Dropdown">
+<!--    <span class="app-form-label">dropdown:</span>-->
+
+    <mat-form-field class="flex w-full max-reduced-density">
+<!--      when you use max-reduced-density, there is no room for a mat-label    Blow the mat-label away and use the <span class="app-form-label"...>   -->
+<!--    <mat-label>Action Dropdown:</mat-label>-->
+    <mat-select placeholder="select an order type" title="Action Dropdown" aria-label="Action Dropdown">
+      <mat-option [value]=null>-Select an order</mat-option>
       <mat-option value="1">Buy Stock</mat-option>
       <mat-option value="2">Buy Mutual Fund</mat-option>
       <mat-option value="3">Sell Stock</mat-option>
@@ -28,24 +32,27 @@
 
 <!--  Quantity Textbox    -->
   <div>
-    <form>
-      <mat-form-field title="Quantity" aria-label="Quantity" class="flex w-full">
-        <mat-label>Quantity:</mat-label>
+      <span class="app-form-label">Quantity:</span>
+          <mat-form-field class="max-reduced-density">
+        <input type="text" matInput title="Quantity" aria-label="=Quantity"/>
+      </mat-form-field>
+<!--      <mat-form-field title="Quantity" aria-label="Quantity" class="flex w-full">-->
+<!--        <mat-label>Quantity:</mat-label>-->
         <input matInput type="text">
         <mat-hint>5*</mat-hint>
 
-      </mat-form-field>
-    </form>
+<!--      </mat-form-field>-->
 
   </div>
 
 <!--  Symbol Textbox    -->
 
   <div>
+    <span class="app-form-label">Symbol:</span>
+
     <form>
-      <mat-form-field title="Symbol" aria-label="Symbol" class="flex w-full">
-        <mat-label>Symbol:</mat-label>
-        <input matInput type="text">
+      <mat-form-field title="Symbol" aria-label="Symbol" class="flex w-full max-reduced-density">
+        <input matInput placeholder="fred" type="text">
         <mat-hint>IBM</mat-hint>
 
       </mat-form-field>
@@ -54,25 +61,35 @@
 
 <!--  Order Type Dropdown   -->
   <div>
-    <mat-form-field class="flex w-full">
-      <mat-label>Order Type:</mat-label>
-      <mat-select title="Order Type" aria-label="Order Type">
-        <mat-option value="1">Market Order</mat-option>
-        <mat-option value="2">Limit Order</mat-option>
+    <span class="app-form-label">Order Type:</span>
+
+    <mat-form-field class="flex w-full max-reduced-density">
+<!--      The below is an alternate way of showing a label, but the span tag above is the new way to do it/how we'll do it in NI2   -->
+<!--      <mat-label>Order Type:</mat-label>-->
+      <mat-select title="Order Type" aria-label="Order Type" #orderTypeVariable>
+        <mat-option value=1>Market Order</mat-option>
+        <mat-option value=2>Limit Order</mat-option>
       </mat-select>
+
+      <mat-hint>this is a hint:</mat-hint>
+
     </mat-form-field>
   </div>
 
 <!--  Limit Price Textbox   -->
-  <div>
+
+  <div *ngIf="this.orderTypeVariable.value == 2">
+    <span class="app-form-label">Limit Price:</span>
+
     <form>
-      <mat-form-field title="Limit Price" aria-label="Limit Price" class="flex w-full">
-        <mat-label>Limit Price:</mat-label>
+      <mat-form-field title="Limit Price" aria-label="Limit Price" class="flex w-full max-reduced-density">
+<!--        <mat-label>Limit Price:</mat-label>-->
         <input matInput type="text">
         <mat-hint>85</mat-hint>
       </mat-form-field>
     </form>
   </div>
+
 
 </div>
 

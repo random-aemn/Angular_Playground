@@ -51,11 +51,11 @@
 
 </div>
 
-<div class="w-2/5 absolute top-5 right-0 bg-blue-500 border-l-2 border-l-black" [ngClass]="{
+<div class="w-2/5 absolute top-20 right-0 bg-blue-500 border-l-3 border-l-black" [ngClass]="{
 'expanded-div': this.helpBarIsShowing == true,
 'collapsed-div': this.helpBarIsShowing == false
 }" style="height: calc(100vh - 20px)">
-  <div class="grid grid-cols-2">
+  <div class="grid grid-cols-2 p-2.5">
     <div class="text-2xl">Help</div>
     <div class="flex place-content-end">
       <button mat-raised-button (click)="closeHelp()">Close</button>

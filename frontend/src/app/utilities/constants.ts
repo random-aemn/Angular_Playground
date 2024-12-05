@@ -23,6 +23,12 @@ export enum Constants {
   EXERCISE_5B_HOLY_GRAIL_REAL                = "page/holy-grail-real",
   EXERCISE_5C_SCROLL_INTO_VIEW                = "page/scroll-into-view",
   EXERCISE_6B_SLIDE_OUT_DRAWER                = "page/slide-out-help",
+  EXERCISE_13A_OBSERVABLE_DROPDOWN                 = "page/add-contract-subscribe",
+  EXERCISE_21b_ACKNOWLEDGEMENT_PAGE                = "page/acknowledgement",
+  EXERCISE_5_TWO_HEIGHT                        = "page/variable-height-two",
+  EXERCISE_6_B_2                               = "page/slide-out-help-2",
+  EXERCISE_6_C                               = "page/smooth-vert-transition-1",
+  EXERCISE_10_B                               = "page/edit-contract-spec",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

@@ -97,6 +97,13 @@ insert into uicontrols(id, name) values(5008, 'page/holy-grail-not');
 insert into uicontrols(id, name) values(5009, 'page/holy-grail-real');
 insert into uicontrols(id, name) values(5010, 'page/scroll-into-view');
 insert into uicontrols(id, name) values(5011, 'page/slide-out-help');
+insert into uicontrols(id, name) values(5012, 'page/add-contract-subscribe');
+insert into uicontrols(id, name) values(5013, 'page/variable-height-two');
+insert into uicontrols(id, name) values(5014, 'page/slide-out-help-2');
+insert into uicontrols(id, name) values(5015, 'page/smooth-vert-transition-1');
+insert into uicontrols(id, name) values(5016, 'page/edit-contract-spec');
+
+-- insert into uicontrols(id, name) values(5013, 'page/acknowledgement');
 
 
 

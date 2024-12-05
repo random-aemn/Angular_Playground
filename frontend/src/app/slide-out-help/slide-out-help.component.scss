@@ -3,12 +3,13 @@
 //}
 
 .collapsed-div{
+  // need the @apply to use tailwind classes - otherwise you need to use css syntax
   @apply transition-all ease-in-out duration-[2000ms] w-0 overflow-hidden opacity-0;
 
 }
 
 .expanded-div{
-
+  // z-index means that the element with a higher z-index "wins" and gets shown
   @apply transition-all ease-in-out duration-[2000ms] opacity-100 z-10;
 
 }

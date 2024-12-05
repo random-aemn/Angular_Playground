@@ -98,7 +98,31 @@ export const navbarContents: NavGroup[] = [
       {
         navItemName: "Exercise Page 6B / Slide Out Help",
         navItemUrl: Constants.EXERCISE_6B_SLIDE_OUT_DRAWER,
-      }
+      },
+      {
+        navItemName: "Exercise Page 13A / Dropdown Observable",
+        navItemUrl: Constants.EXERCISE_13A_OBSERVABLE_DROPDOWN,
+      },
+      {
+        navItemName: "5-Two",
+        navItemUrl: Constants.EXERCISE_5_TWO_HEIGHT,
+      },
+      {
+        navItemName: "Slide Out Help",
+        navItemUrl: Constants.EXERCISE_6_B_2,
+      },
+      {
+        navItemName: "Vertical Transitions 1",
+        navItemUrl: Constants.EXERCISE_6_C,
+      },
+      {
+        navItemName: "Date Picker!",
+        navItemUrl: Constants.EXERCISE_10_B,
+      },
+      // {
+      //   navItemName: "Exercise 21b / Acknowledge Page",
+      //   navItemUrl: Constants.EXERCISE_21b_ACKNOWLEDGEMENT_PAGE,
+      // }
 		]
 	},
 

@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 /* You can add global styles to this file, and also import other style files */
 
 @tailwind base;
@@ -15,6 +17,8 @@ body {
   margin: 0;
   font-family: Merriweather, sans-serif;
 }
+
+
 
 /* Define @font-face rules for each weight and style for LATO */
 @font-face {
@@ -366,3 +370,27 @@ button.disabled-button {
   pointer-events: none;
   display: none
 }
+
+.max-reduced-density {
+  /* Tell the form field to use less padding.  Angular Material ranges from 0 (normal) to -5 (less padding)  */
+  @include mat.form-field-density(-5);
+}
+
+// everything in a css file must start with a dot.
+.app-form-label {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  // the html version of newline
+  display: block;
+}
+
+mat-datepicker-toggle.max-reduced-calendar .mat-mdc-icon-button.mat-mdc-button-base {
+  /* Reduce the height of the date picker box that has class="max-reduced-calendar" */
+  padding: 0 8px;
+  --mdc-icon-button-state-layer-size: 36px !important;
+}
+

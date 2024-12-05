@@ -59,15 +59,16 @@ create table users
     full_name            varchar(200)      null,
     email                varchar(200)      null,
     created_date         timestamp     not null,
-    last_login_date      timestamp     not null,
-    last_updated_date    timestamp     not null,
+    last_login_date         timestamp                    not null,
+    last_updated_date       timestamp                    not null,
+    acknowledgement_date    timestamp with time zone     null,
     primary key (id)
 );
 comment on table users is 'The Users table holds information about each user';
 
 -- Add a user record for the SYSTEM user
-insert into users(id, version, cert_username, is_locked, first_name, last_name, full_name, email, created_date, last_login_date, last_updated_date)
-values(10, 1, 'SYSTEM', true, '', '', 'SYSTEM', null, '2024-03-10 21:46:41.823072', '2024-03-13 21:46:41.823072', '2024-03-13 21:46:41.823072');
+insert into users(id, version, cert_username, is_locked, first_name, last_name, full_name, email, created_date, last_login_date, last_updated_date, acknowledgement_date)
+values(10, 1, 'SYSTEM', true, '', '', 'SYSTEM', null, '2024-03-10 21:46:41.823072', '2024-03-13 21:46:41.823072', '2024-03-13 21:46:41.823072', null);
 
 
 
@@ -85,12 +86,14 @@ create table users_aud
     full_name            varchar(200)      null,
     email                varchar(100)      null,
     created_date         timestamp         null,
-    last_login_date      timestamp         null,
-    last_updated_date    timestamp         null,
-    timestamp            timestamp     not null,
-    username             varchar(100)  not null,
-    audit_type           integer       not null, --0 create, 1 update, 2 delete
-    transaction_id       integer       not null
+    last_login_date         timestamp         null,
+    last_updated_date       timestamp         null,
+    timestamp               timestamp     not null,
+    username                varchar(100)  not null,
+    audit_type              integer       not null, --0 create, 1 update, 2 delete
+    transaction_id          integer       not null,
+    acknowledgement_date    timestamp with time zone null
+
 );
 comment on table Users_aud is 'The Audit table for the Users table';
 
