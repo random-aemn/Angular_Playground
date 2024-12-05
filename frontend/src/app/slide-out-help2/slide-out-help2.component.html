@@ -1,0 +1,170 @@
+<div class="m-2.5">
+
+<div class="grid grid-cols-2">
+  <div >
+    Slide Out Help
+  </div>
+  <div class="flex place-content-end">
+    <button mat-raised-button class="!bg-emerald-500"
+    (click)="openHelp()">
+      Help Btn
+    </button>
+  </div>
+</div>
+
+<div class="mt-5">
+  <div class="flex-grow">
+    <form class="mat-form-field">
+      <mat-form-field class="flex-grow w-[500px]">
+        <mat-label>Username:</mat-label>
+        <input matInput type="text">
+        <mat-hint>Yakko Warner</mat-hint>
+      </mat-form-field>
+    </form>
+
+  </div>
+
+  <div class="flex-grow">
+    <mat-form-field class="w-[500px]">
+      <mat-label>User Type:</mat-label>
+      <mat-select title="User Type" aria-label="User Type">
+        <mat-option value="1">Gov't User</mat-option>
+        <mat-option value="2">Industry User</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="flex place-content-center gap-5">
+<!--    If Angular Materials and Tailwind are fighting to see whose preferences win - use the exclamation point to give supremacy to tailwind   -->
+    <button mat-raised-button class="!bg-blue-500">Reset Btn</button>
+    <button mat-raised-button color="primary">Submit Btn</button>
+  </div>
+
+</div>
+
+
+
+</div>
+
+<div class="w-2/5 absolute top-20 right-0 bg-blue-500 border-[7px] border-black overflow-y-auto" [ngClass]="{
+'expanded-div': this.helpShowing == true,
+'collapsed-div': this.helpShowing == false
+}" style="height: calc(100vh - 80px)">
+  <div class="grid grid-cols-2 p-2.5">
+    <div class="text-2xl">Help</div>
+
+    <div class="flex place-content-end">
+      <button mat-raised-button (click)="closeHelp()">Close</button>
+    </div>
+
+  </div>
+
+<!--  Can shove a bunch of text in with the overflow-y-auto to ensure the height calculations are correct   -->
+  <div class="flex place-content-center">Help Nav</div>
+  help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>    help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>    help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>    help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>    help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br>help
+  <br> BOTTOM
+</div>

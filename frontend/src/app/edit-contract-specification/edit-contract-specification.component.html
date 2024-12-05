@@ -1,0 +1,71 @@
+<div class="m-2.5">
+
+  <!--  Header element    -->
+  <div class="grid grid-cols-2">
+    <div>
+      <span class="text-2xl">Edit Contract Specification</span>
+
+    </div>
+    <div class="flex place-content-end">
+      <button mat-stroked-button class="!bg-blue-500" >Help</button>
+    </div>
+  </div>
+
+  <!--  Rest of page    -->
+  <div class="mt-5">
+    <div>
+<!--      contract spec name textbox-->
+      <span class="app-form-label">Contract Spec Name</span>
+      <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
+        <input matInput placeholder="Daffy Duck">
+      </mat-form-field>
+    </div>
+
+<!--    use the span class with the app-form-label for a more modern look
+        max-reduced-density reduces the padding all the way around for a slimmer input field
+         subscriptSizing is an Angular directive that will eliminate the extra space reserved on the bottom of the form field; if an mat error message appears, then it will use that space-->
+    <div class="mt-5">
+      <span class="app-form-label">Priority</span>
+      <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
+        <mat-select>
+          <mat-option value=1> 1</mat-option>
+          <mat-option value=2> 2</mat-option>
+          <mat-option value=3> 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+<!--      Priority Dropdown-->
+    </div>
+    <div class="flex flex-row gap-x-2 mt-5">
+    <div>
+      <span class="app-form-label">Contract spec execution</span>
+      <mat-form-field class="max-reduced-density !h-[36px]" subscriptSizing="dynamic">
+
+<!--        template variable ties the three elements of the date picker together - the toggle is the calendar icon, the datepicker is the whole calendar popup, the the input is the textbox that actually stores the date   -->
+          <input matInput [matDatepicker]="myDatePicker"/>
+<!--        matIconSuffic tells the datepicker to put the toggle on the far right; prefix puts it far left    -->
+            <mat-datepicker-toggle [for]="myDatePicker" matIconSuffix class="max-reduced-calendar"> </mat-datepicker-toggle>
+        <!-- datepicker requires a template variable    -->
+            <mat-datepicker #myDatePicker></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+    <div class="ml-2">
+      <span class="app-form-label">Extra days</span>
+       <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
+         <input matInput/>
+       </mat-form-field>
+    </div>
+    </div>
+  </div>
+
+  <!--  Buttons at bottom of page   -->
+  <div class="flex place-content-center gap-5 mt-10">
+    <div>
+      <button mat-stroked-button class="!bg-amber-500">Reset</button>
+    </div>
+    <div>
+      <button mat-stroked-button class="!bg-emerald-500">Save</button>
+    </div>
+  </div>
+
+</div>

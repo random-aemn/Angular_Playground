@@ -1,0 +1,8 @@
+div {
+  border: 1px dashed black
+}
+
+.smooth-height-transition{
+  @apply transition-all ease-in-out duration-[500ms] h-0 overflow-hidden opacity-0
+
+}
