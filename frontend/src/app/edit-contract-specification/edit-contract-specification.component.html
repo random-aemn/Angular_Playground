@@ -1,4 +1,8 @@
+<!--invoke the rest call and WHEN it comes back, that data/elements will be rendered    -->
+<ng-container *ngIf="contractSpecObs | async">
 <div class="m-2.5">
+<!--  form tag MUST encompass all of the form elements - dropdowns, text boxes, etc   -->
+  <form [formGroup]="this.myForm" novalidate autocomplete="off">
 
   <!--  Header element    -->
   <div class="grid grid-cols-2">
@@ -14,46 +18,57 @@
   <!--  Rest of page    -->
   <div class="mt-5">
     <div>
+
 <!--      contract spec name textbox-->
       <span class="app-form-label">Contract Spec Name</span>
       <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
-        <input matInput placeholder="Daffy Duck">
+<!--        adding the form control to this input field-->
+        <input matInput placeholder="Daffy Duck" formControlName="contractSpecName">
       </mat-form-field>
     </div>
 
 <!--    use the span class with the app-form-label for a more modern look
         max-reduced-density reduces the padding all the way around for a slimmer input field
          subscriptSizing is an Angular directive that will eliminate the extra space reserved on the bottom of the form field; if an mat error message appears, then it will use that space-->
+
+    <!--      Priority Dropdown-->
     <div class="mt-5">
       <span class="app-form-label">Priority</span>
       <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
-        <mat-select>
-          <mat-option value=1> 1</mat-option>
-          <mat-option value=2> 2</mat-option>
-          <mat-option value=3> 3</mat-option>
+        <mat-select formControlName="priority">
+          <mat-option [value]=1> Low</mat-option>
+          <mat-option [value]=2> Medium</mat-option>
+          <mat-option [value]=3> High</mat-option>
         </mat-select>
       </mat-form-field>
-<!--      Priority Dropdown-->
+
+<!--      DatePicker    -->
     </div>
     <div class="flex flex-row gap-x-2 mt-5">
     <div>
       <span class="app-form-label">Contract spec execution</span>
-      <mat-form-field class="max-reduced-density !h-[36px]" subscriptSizing="dynamic">
+      <mat-form-field class="max-reduced-density !h-[36px]" subscriptSizing="dynamic" >
+<!--        <mat-select formControlName="contractSpecExecutionDate">-->
 
 <!--        template variable ties the three elements of the date picker together - the toggle is the calendar icon, the datepicker is the whole calendar popup, the the input is the textbox that actually stores the date   -->
-          <input matInput [matDatepicker]="myDatePicker"/>
+          <input matInput [matDatepicker]="myDatePicker" formControlName="contractSpecExecutionDate"/>
 <!--        matIconSuffic tells the datepicker to put the toggle on the far right; prefix puts it far left    -->
-            <mat-datepicker-toggle [for]="myDatePicker" matIconSuffix class="max-reduced-calendar"> </mat-datepicker-toggle>
+            <mat-datepicker-toggle [for]="myDatePicker" matIconSuffix class="max-reduced-calendar" > </mat-datepicker-toggle>
         <!-- datepicker requires a template variable    -->
-            <mat-datepicker #myDatePicker></mat-datepicker>
+            <mat-datepicker #myDatePicker ></mat-datepicker>
+<!--          </mat-select>-->
       </mat-form-field>
 
     </div>
+
+<!--      Extra Days    -->
     <div class="ml-2">
       <span class="app-form-label">Extra days</span>
+<!--      <mat-select formControlName="extraDays">-->
        <mat-form-field class="max-reduced-density" subscriptSizing="dynamic">
-         <input matInput/>
+         <input matInput formControlName="extraDays"/>
        </mat-form-field>
+<!--      </mat-select>-->
     </div>
     </div>
   </div>
@@ -68,4 +83,14 @@
     </div>
   </div>
 
+    <pre>
+      this.myForm.controls.orderType.value = {{this.myForm.controls.contractSpecName.value}}
+      this.myForm.controls.orderType.value = {{this.myForm.controls.priority.value}}
+      this.myForm.controls.orderType.value = {{this.myForm.controls.contractSpecExecutionDate.value}}
+      this.myForm.controls.orderType.value = {{this.myForm.controls.extraDays.value}}
+
+    </pre>
+
+  </form>
 </div>
+</ng-container>

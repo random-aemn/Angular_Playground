@@ -29,6 +29,9 @@ export enum Constants {
   EXERCISE_6_B_2                               = "page/slide-out-help-2",
   EXERCISE_6_C                               = "page/smooth-vert-transition-1",
   EXERCISE_10_B                               = "page/edit-contract-spec",
+  EXERCISE_11_A                              = "page/reports/grid-v:",
+  EXERCISE_11_B                              = "page/reports/my-searches",
+  EXERCISE_11_C                              = "page/grid-page-with-filters",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

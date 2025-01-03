@@ -102,6 +102,9 @@ insert into uicontrols(id, name) values(5013, 'page/variable-height-two');
 insert into uicontrols(id, name) values(5014, 'page/slide-out-help-2');
 insert into uicontrols(id, name) values(5015, 'page/smooth-vert-transition-1');
 insert into uicontrols(id, name) values(5016, 'page/edit-contract-spec');
+insert into uicontrols(id, name) values(5017, 'page/reports/grid-v:');
+insert into uicontrols(id, name) values(5018, 'page/reports/my-searches');
+insert into uicontrols(id, name) values(5019, 'page/grid-page-with-filters');
 
 -- insert into uicontrols(id, name) values(5013, 'page/acknowledgement');
 

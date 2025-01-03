@@ -119,10 +119,19 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Date Picker!",
         navItemUrl: Constants.EXERCISE_10_B,
       },
-      // {
-      //   navItemName: "Exercise 21b / Acknowledge Page",
-      //   navItemUrl: Constants.EXERCISE_21b_ACKNOWLEDGEMENT_PAGE,
-      // }
+      {
+        navItemName: "AG-GRID",
+        navItemUrl: Constants.EXERCISE_11_A,
+      },
+      {
+        navItemName: "Searches Grid",
+        navItemUrl: Constants.EXERCISE_11_B,
+      },
+      {
+        navItemName: "Grid with Filters",
+        navItemUrl: Constants.EXERCISE_11_C,
+      },
+
 		]
 	},
 

@@ -62,6 +62,9 @@ import { VariableHeightTwoComponent } from './variable-height-two/variable-heigh
 import { SlideOutHelp2Component } from './slide-out-help2/slide-out-help2.component';
 import { SmoothVerticalTransition1Component } from './smooth-vertical-transition1/smooth-vertical-transition1.component';
 import { EditContractSpecificationComponent } from './edit-contract-specification/edit-contract-specification.component';
+import { ReportsGridViewComponent } from './reports-grid-view/reports-grid-view.component';
+import { MySearchesGridComponent } from './my-searches-grid/my-searches-grid.component';
+import { GridPageWithFiltersComponent } from './grid-page-with-filters/grid-page-with-filters.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -83,15 +86,18 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_5B_HOLY_GRAIL_REAL,           component: RealHolyGrailComponent,              canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_5C_SCROLL_INTO_VIEW,          component: ScrollIntoViewComponent,              canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_6B_SLIDE_OUT_DRAWER,          component: SlideOutHelpComponent,              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_13A_OBSERVABLE_DROPDOWN,          component: AddContractSubscribeComponent,              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_21b_ACKNOWLEDGEMENT_PAGE,          component: AcknowledgementPageComponent,              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_5_TWO_HEIGHT,                 component: VariableHeightTwoComponent,              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_6_B_2,                        component: SlideOutHelp2Component,                  canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_6_C   ,                        component: SmoothVerticalTransition1Component,                  canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_10_B   ,                        component: EditContractSpecificationComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_13A_OBSERVABLE_DROPDOWN,          component: AddContractSubscribeComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_21b_ACKNOWLEDGEMENT_PAGE,          component: AcknowledgementPageComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_5_TWO_HEIGHT,                 component: VariableHeightTwoComponent,                         canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_6_B_2,                        component: SlideOutHelp2Component,                             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_6_C,                         component: SmoothVerticalTransition1Component,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_10_B,                        component: EditContractSpecificationComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_11_A,                        component: ReportsGridViewComponent,                            canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_11_B,                        component: MySearchesGridComponent,                            canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_11_C,                        component: GridPageWithFiltersComponent,                       canActivate: [PageGuard.canActivate ] },
 
-  { path:  '',                                component: WelcomeComponent,                   canActivate: [PageGuard.canActivate ] },
-  { path:  '**',                              component: NotFoundComponent }
+  { path:  '',                                             component: WelcomeComponent,                                    canActivate: [PageGuard.canActivate ] },
+  { path:  '**',                                           component: NotFoundComponent }
 ];
 
 @NgModule({
@@ -125,7 +131,10 @@ const appRoutes: Routes = [
     VariableHeightTwoComponent,
     SlideOutHelp2Component,
     SmoothVerticalTransition1Component,
-    EditContractSpecificationComponent
+    EditContractSpecificationComponent,
+    ReportsGridViewComponent,
+    MySearchesGridComponent,
+    GridPageWithFiltersComponent
   ],
 
 
