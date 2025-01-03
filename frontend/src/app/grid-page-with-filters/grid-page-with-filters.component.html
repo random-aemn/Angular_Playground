@@ -1,0 +1,23 @@
+<div class="m-2.5">
+  <div class="grid grid-cols-2">
+    <div>
+      Grid Page With Filters
+    </div>
+    <div class="flex place-content-end">
+      Help
+    </div>
+  </div>
+
+<!--  class="overflow-y-auto mt-2.5" style="height: calc(100vh - 137px)"-->
+  <div class="overflow-y-auto mt-2.5" style="height: calc(100vh - 136px)">
+    <ag-grid-angular
+      [gridOptions]="this.gridOptions"
+      [columnDefs]="this.columnDefs"
+      [defaultColDef]="this.defaultColumnDef"
+      class="w-full h-full ag-theme-alpine"
+
+    >
+    </ag-grid-angular>
+  </div>
+
+</div>

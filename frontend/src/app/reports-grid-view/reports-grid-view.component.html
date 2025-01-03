@@ -1,0 +1,22 @@
+<div class="m-2.5">
+
+  <div class="grid grid-cols-2">
+    <div>
+      Reports Grid View
+    </div>
+    <div class="flex place-content-end">
+      Help
+    </div>
+  </div>
+
+  <div class="overflow-y-auto mt-2.5" style="height: calc(100vh - 150px)">
+  <ag-grid-angular
+  [gridOptions] = "this.gridOptions"
+  [columnDefs]="this.columnDefs"
+  [defaultColDef]="this.defaultColumnDef"
+  [rowData]="this.rowData"
+  class="w-full h-full ag-theme-balham">
+  </ag-grid-angular>
+  </div>
+
+</div>

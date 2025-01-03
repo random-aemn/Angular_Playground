@@ -1,0 +1,32 @@
+<div class="m-2.5">
+
+  <div class="grid grid-cols-2">
+    <div>
+      My Searches
+    </div>
+    <div class="flex place-content-end">
+      Help
+    </div>
+  </div>
+
+  <button mat-raised-button>Reset Grid</button>
+
+  <div class="overflow-y-auto mt-2.5" style="height: calc(100vh - 137px)">
+
+<!--    When the grid is fully initialized, call the 'onGridReady' method-->
+<!--    square brackets are for things being passed into your component ->
+        parentheses are for events - things the component is sending out-->
+    <ag-grid-angular
+    [gridOptions]="this.gridOptions"
+    [columnDefs]="this.columnDefs"
+    [defaultColDef]="this.defaultColumnDef"
+    (gridReady)="onGridReady($event)"
+    class="w-full h-full ag-theme-alpine"
+    >
+
+    </ag-grid-angular>
+  </div>
+
+
+
+</div>
