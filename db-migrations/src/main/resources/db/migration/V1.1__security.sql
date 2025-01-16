@@ -105,6 +105,8 @@ insert into uicontrols(id, name) values(5016, 'page/edit-contract-spec');
 insert into uicontrols(id, name) values(5017, 'page/reports/grid-v:');
 insert into uicontrols(id, name) values(5018, 'page/reports/my-searches');
 insert into uicontrols(id, name) values(5019, 'page/grid-page-with-filters');
+insert into uicontrols(id, name) values(5020, 'page/grid-page-with-row-selection');
+insert into uicontrols(id, name) values(5021, 'page/grid-page-with-custom-filter');
 
 -- insert into uicontrols(id, name) values(5013, 'page/acknowledgement');
 

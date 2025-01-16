@@ -65,6 +65,8 @@ import { EditContractSpecificationComponent } from './edit-contract-specificatio
 import { ReportsGridViewComponent } from './reports-grid-view/reports-grid-view.component';
 import { MySearchesGridComponent } from './my-searches-grid/my-searches-grid.component';
 import { GridPageWithFiltersComponent } from './grid-page-with-filters/grid-page-with-filters.component';
+import { GridPageWithRowSelectionComponent } from './grid-page-with-row-selection/grid-page-with-row-selection.component';
+import { GridPageWithCustomFilterComponent } from './grid-page-with-custom-filter/grid-page-with-custom-filter.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -95,6 +97,8 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_11_A,                        component: ReportsGridViewComponent,                            canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_11_B,                        component: MySearchesGridComponent,                            canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_11_C,                        component: GridPageWithFiltersComponent,                       canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_11_H,                        component: GridPageWithRowSelectionComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_11_I,                        component: GridPageWithCustomFilterComponent,                  canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                             component: WelcomeComponent,                                    canActivate: [PageGuard.canActivate ] },
   { path:  '**',                                           component: NotFoundComponent }
@@ -134,7 +138,9 @@ const appRoutes: Routes = [
     EditContractSpecificationComponent,
     ReportsGridViewComponent,
     MySearchesGridComponent,
-    GridPageWithFiltersComponent
+    GridPageWithFiltersComponent,
+    GridPageWithRowSelectionComponent,
+    GridPageWithCustomFilterComponent
   ],
 
 

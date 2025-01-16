@@ -1,0 +1,84 @@
+<div class="p-2.5 accent-backDropColor">
+  <div class="grid grid-cols-2">
+    <div>
+      Grid Page with Custom Filter
+    </div>
+    <div class="flex place-content-end mb-2.5">
+      Help
+    </div>
+  </div>
+
+  <div>
+    <!--  S E A R C H       B O X       L I N E   -->
+    <div class="mt-2.5 flex flex-row w-full h-[64px] relative flex-shrink-0">
+
+      <!-- Tab -->
+      <div class="flex flex-row items-center absolute bg-white rounded-t px-3 py-2 border-x border-t border-borderColor h-full w-[150px] top-[1px]">
+
+        <!-- Vertical Bar -->
+        <div class="w-[5px] h-full float-left bg-[#1E3059] rounded mr-2.5 flex-shrink-0"></div>
+
+        <div class="flex flex-col pt-2">
+          <div class="h-[30px] w-[125px] flex place-content-start">
+            <!-- Title (count) -->
+            <ng-container>
+              <!-- Display Total -->
+              <span class="text-2xl font-extrabold">{{this.totalRecords}}</span>
+            </ng-container>
+          </div>
+
+          <div class="h-[30px] flex place-content-start">
+            <!-- Total Records on Page Load -->
+            <span>Total Records</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Searchbar Container -->
+      <div class="h-full w-full py-2 flex flex-row pl-[158px]">
+
+        <!-- Searchbar -->
+        <div class="w-full bg-white rounded border-borderColor border justify-center flex flex-row gap-2.5 pl-3.5 overflow-hidden">
+
+          <!-- Searchbar Input -->
+          <input matInput type="text"
+                 class="w-full outline-none"
+                 placeholder="Search..."
+                 autocomplete="off"
+                 title="Search Box"
+                 style="background: white"
+                 aria-label="Search Box"/>
+
+          <!-- Clear Icon -->
+          <span class="flex clickable items-center justify-center" title="Clear Search" aria-label="Clear Search">
+                                <i class="fa-solid fa-xmark-large"></i>
+                        </span>
+
+          <!-- Search Icon -->
+          <div class="bg-blue-950 rounded-r w-[42px] items-center justify-center clickable text-white flex h-full" aria-label="Search" title="Search">
+            <i class="fa-regular fa-search"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div> Grid Buttons</div>
+
+    <div class="overflow-y-auto mt-2.5" style="height: calc(100vh - 180px)">
+      <ag-grid-angular
+        [gridOptions]="this.gridOptions"
+        [columnDefs]="this.columnDefs"
+        [defaultColDef]="this.defaultColumnDefs"
+        (gridReady)="onGridReady($event)"
+        class="w-full h-full ag-theme-alpine"
+      >
+      </ag-grid-angular>
+    </div>
+
+  </div>
+

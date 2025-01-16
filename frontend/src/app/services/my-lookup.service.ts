@@ -31,6 +31,6 @@ export class MyLookupService {
       },
     ];
 
-
+return of(data)
   }
 }
