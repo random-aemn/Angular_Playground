@@ -139,6 +139,10 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Grid with custom filter",
         navItemUrl: Constants.EXERCISE_11_I,
       },
+      {
+        navItemName: "Tab Group",
+        navItemUrl: Constants.EXERCISE_12_A,
+      },
 
 		]
 	},

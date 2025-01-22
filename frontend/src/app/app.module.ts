@@ -67,6 +67,10 @@ import { MySearchesGridComponent } from './my-searches-grid/my-searches-grid.com
 import { GridPageWithFiltersComponent } from './grid-page-with-filters/grid-page-with-filters.component';
 import { GridPageWithRowSelectionComponent } from './grid-page-with-row-selection/grid-page-with-row-selection.component';
 import { GridPageWithCustomFilterComponent } from './grid-page-with-custom-filter/grid-page-with-custom-filter.component';
+import { TabGroupPageComponent } from './tab-group-page/tab-group-page.component';
+import { TabUserProfileComponent } from './tab-group-page/tab-user-profile/tab-user-profile.component';
+import { TabCompletedActionsComponent } from './tab-group-page/tab-completed-actions/tab-completed-actions.component';
+import { TabWorkInProgressActionsComponent } from './tab-group-page/tab-work-in-progress-actions/tab-work-in-progress-actions.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -99,6 +103,7 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_11_C,                        component: GridPageWithFiltersComponent,                       canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_11_H,                        component: GridPageWithRowSelectionComponent,                  canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_11_I,                        component: GridPageWithCustomFilterComponent,                  canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_12_A,                        component: TabGroupPageComponent,                              canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                             component: WelcomeComponent,                                    canActivate: [PageGuard.canActivate ] },
   { path:  '**',                                           component: NotFoundComponent }
@@ -140,7 +145,11 @@ const appRoutes: Routes = [
     MySearchesGridComponent,
     GridPageWithFiltersComponent,
     GridPageWithRowSelectionComponent,
-    GridPageWithCustomFilterComponent
+    GridPageWithCustomFilterComponent,
+    TabGroupPageComponent,
+    TabUserProfileComponent,
+    TabCompletedActionsComponent,
+    TabWorkInProgressActionsComponent
   ],
 
 

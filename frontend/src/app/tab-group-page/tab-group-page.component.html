@@ -1,0 +1,45 @@
+<div class="m-2.5">
+
+  <div class="grid grid-cols-2">
+    <div class="text-xl text-amber-600">
+      Tab Group Page
+    </div>
+    <div class="flex place-content-end text-xl text-lime-400">
+      Help
+    </div>
+  </div>
+
+  <div class="mt-2.5">
+
+    <!-- USER PROFILE TAB   -->
+    <mat-tab-group>
+      <mat-tab label="User Profile">
+        <app-tab-user-profile></app-tab-user-profile>
+      </mat-tab>
+
+    <!-- COMPLETED ACTIONS TAB   -->
+      <mat-tab label="Completed Actions">
+        <app-tab-completed-actions></app-tab-completed-actions>
+      </mat-tab>
+
+    <!-- WORK-IN-PROGRESS ACTIONS TAB   -->
+
+      <mat-tab label="Work in-Progress Actions">
+
+        <ng-template matTabContent>
+
+        <app-tab-work-in-progress-actions></app-tab-work-in-progress-actions>
+
+      </ng-template>
+
+      </mat-tab>
+
+
+
+    </mat-tab-group>
+
+
+  </div>
+
+
+</div>
