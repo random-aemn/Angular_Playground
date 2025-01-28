@@ -35,6 +35,7 @@ export enum Constants {
   EXERCISE_11_H                              = "page/grid-page-with-row-selection",
   EXERCISE_11_I                              = "page/grid-page-with-custom-filter",
   EXERCISE_12_A                              = "page/tab-group-page",
+  EXERCISE_12_B                              = "page/pretty-tabs",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)
