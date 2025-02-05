@@ -76,6 +76,11 @@ import { TabOriginalSubmissionComponent } from './pretty-tabs-page/tab-original-
 import { TabDocumentsComponent } from './pretty-tabs-page/tab-documents/tab-documents.component';
 import { TabHistoryComponent } from './pretty-tabs-page/tab-history/tab-history.component';
 import {TabEnrichmentComponent} from "./pretty-tabs-page/tab-enrichment/tab-enrichment.component";
+import { FourTabPageComponent } from './four-tab-page/four-tab-page.component';
+import { Tab1ComponentComponent } from './four-tab-page/tab1-component/tab1-component.component';
+import { Tab2ComponentComponent } from './four-tab-page/tab2-component/tab2-component.component';
+import { Tab3ComponentComponent } from './four-tab-page/tab3-component/tab3-component.component';
+import { Tab4ComponentComponent } from './four-tab-page/tab4-component/tab4-component.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -110,6 +115,7 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_11_I,                        component: GridPageWithCustomFilterComponent,                  canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_12_A,                        component: TabGroupPageComponent,                              canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_12_B,                        component: PrettyTabsPageComponent,                              canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_SWITCH_TABS,                  component: FourTabPageComponent,                               canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                             component: WelcomeComponent,                                    canActivate: [PageGuard.canActivate ] },
   { path:  '**',                                           component: NotFoundComponent }
@@ -160,7 +166,12 @@ const appRoutes: Routes = [
     TabOriginalSubmissionComponent,
     TabDocumentsComponent,
     TabHistoryComponent,
-    TabEnrichmentComponent
+    TabEnrichmentComponent,
+    FourTabPageComponent,
+    Tab1ComponentComponent,
+    Tab2ComponentComponent,
+    Tab3ComponentComponent,
+    Tab4ComponentComponent
   ],
 
 

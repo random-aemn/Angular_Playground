@@ -147,6 +147,10 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Pretty Tabs",
         navItemUrl: Constants.EXERCISE_12_B,
       },
+      {
+        navItemName: "Switch Tabs",
+        navItemUrl: Constants.EXERCISE_SWITCH_TABS,
+      },
 
 		]
 	},

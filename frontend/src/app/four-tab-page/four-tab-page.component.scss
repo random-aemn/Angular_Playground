@@ -19,6 +19,17 @@
   //background: linear-gradient(to right,  #000000 1%,#485b6b 50%,#000000 100%);
 }
 
+// ADD 1PX TRANSPARENT BORDER TO THE NON-ACTIVE TABS
+:host ::ng-deep .mdc-tab {
+  /* All tabs have a transparent border */
+  //border: 1px solid blue;
+  box-sizing: border-box;
+  border-radius: 20px;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,4c3293+50,000000+100 */
+  //background: linear-gradient(to right,  #000000 0%,#4c3293 50%,#000000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to right,  #4c3293 0%,#000000 50%,#4c3293 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+}
 
 :host ::ng-deep  .mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
   /* Change the text color of the tabs -- there are many states */
