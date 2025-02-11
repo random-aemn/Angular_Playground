@@ -22,9 +22,11 @@
     "@angular/platform-browser-dynamic": "16.2.11",
     "@angular/router": "16.2.11",
     "@fortawesome/fontawesome-pro": "6.5.1",
+    "@highcharts/map-collection": "^2.3.0",
     "ag-grid-angular": "30.2.1",
     "ag-grid-community": "30.2.1",
     "ag-grid-enterprise": "30.2.1",
+    "highcharts": "11.2.0",
     "rxjs": "7.8.1",
     "tslib": "2.6.2",
     "zone.js": "0.13.3"

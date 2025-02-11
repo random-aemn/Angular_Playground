@@ -8,6 +8,6 @@ import {MyTabService} from "../../services/my-tab.service";
 })
 export class Tab1ComponentComponent {
 
-  constructor(private myTabService: MyTabService) {
+  constructor(public myTabService: MyTabService) {
   }
 }

@@ -1,0 +1,50 @@
+<div class="m-2.5">
+
+<!--  TOP ROW   -->
+  <div class="grid grid-cols-2">
+
+  <div>
+    Responsive Dashboard Page
+  </div>
+  <div class="flex place-content-end">
+    Help
+  </div>
+  </div>
+
+  <!--    CHARTS BELOW    -->
+
+  <div class="overflow-y-auto" style="height: calc(100vh - 127px)">
+<!--  Flex wrap works well when the divs/graphs are homogenous in size for a responsive layout   -->
+  <div class="flex flex-row flex-wrap gap-5 p-2.5">
+
+<!--  <div class="overflow-auto gap-5 p-2.5 grid-->
+<!--       grid-cols-1 min-[601px]:-->
+<!--       grid-cols-2 min-[1001px]:-->
+<!--       grid-cols-3 min-[1400px]:-->
+<!--       grid-cols-4"-->
+<!--       style="height: calc(100vh - 127px)">-->
+
+    <div class="h-[200px] w-[400px] mat-elevation-z4 cursor-pointer" aria-label="Clickable Pie Chart">
+      <app-pie-chart-small-component class="h-full w-full" (click)="navigateToPieChartPage()"></app-pie-chart-small-component>
+    </div>
+    <div class="h-[200px] w-[400px] mat-elevation-z4">
+      <app-line-chart-small></app-line-chart-small>
+
+    </div>
+    <div class="h-[200px] w-[400px] mat-elevation-z4">
+      Box 3
+    </div>
+    <div class="h-[200px] w-[400px] mat-elevation-z4">
+      Box 4
+    </div>
+    <div class="h-[200px] w-[400px] mat-elevation-z4">
+      <app-usa-map-small></app-usa-map-small>
+    </div>
+    <div class="h-[200px] w-[400px] mat-elevation-z4">
+      Box 6
+    </div>
+
+  </div>
+  </div>
+
+</div>

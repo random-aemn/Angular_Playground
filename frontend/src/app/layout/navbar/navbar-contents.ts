@@ -151,6 +151,10 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Switch Tabs",
         navItemUrl: Constants.EXERCISE_SWITCH_TABS,
       },
+      {
+        navItemName: "Highcharts Dashboard",
+        navItemUrl: Constants.EXERCISE_25A,
+      },
 
 		]
 	},

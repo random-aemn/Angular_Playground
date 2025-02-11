@@ -37,6 +37,8 @@ export enum Constants {
   EXERCISE_12_A                              = "page/tab-group-page",
   EXERCISE_12_B                              = "page/pretty-tabs",
   EXERCISE_SWITCH_TABS                       = "page/switch-tabs",
+  EXERCISE_25A                               = "page/dashboard",
+  EXERCISE_25C                               = "page/dashboard/pie-chart",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)

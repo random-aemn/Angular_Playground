@@ -81,6 +81,11 @@ import { Tab1ComponentComponent } from './four-tab-page/tab1-component/tab1-comp
 import { Tab2ComponentComponent } from './four-tab-page/tab2-component/tab2-component.component';
 import { Tab3ComponentComponent } from './four-tab-page/tab3-component/tab3-component.component';
 import { Tab4ComponentComponent } from './four-tab-page/tab4-component/tab4-component.component';
+import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
+import { PieChartSmallComponentComponent } from './pie-chart-small-component/pie-chart-small-component.component';
+import { PieChartLargeComponent } from './pie-chart-large/pie-chart-large.component';
+import { LineChartSmallComponent } from './line-chart-small/line-chart-small.component';
+import { UsaMapSmallComponent } from './usa-map-small/usa-map-small.component';
 
 // Setup the routes.  If no route is found, then take the user to the NotFoundComponent
 // NOTE:  The **ORDER** of these routes matters.  The NotFoundComponent should always be last
@@ -115,7 +120,9 @@ const appRoutes: Routes = [
   { path:  Constants.EXERCISE_11_I,                        component: GridPageWithCustomFilterComponent,                  canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_12_A,                        component: TabGroupPageComponent,                              canActivate: [PageGuard.canActivate ] },
   { path:  Constants.EXERCISE_12_B,                        component: PrettyTabsPageComponent,                              canActivate: [PageGuard.canActivate ] },
-  { path:  Constants.EXERCISE_SWITCH_TABS,                  component: FourTabPageComponent,                               canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_SWITCH_TABS,                 component: FourTabPageComponent,                               canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_25A,                         component: DashboardPageComponent,                             canActivate: [PageGuard.canActivate ] },
+  { path:  Constants.EXERCISE_25C,                         component: PieChartLargeComponent,                             canActivate: [PageGuard.canActivate ] },
 
   { path:  '',                                             component: WelcomeComponent,                                    canActivate: [PageGuard.canActivate ] },
   { path:  '**',                                           component: NotFoundComponent }
@@ -171,7 +178,12 @@ const appRoutes: Routes = [
     Tab1ComponentComponent,
     Tab2ComponentComponent,
     Tab3ComponentComponent,
-    Tab4ComponentComponent
+    Tab4ComponentComponent,
+    DashboardPageComponent,
+    PieChartSmallComponentComponent,
+    PieChartLargeComponent,
+    LineChartSmallComponent,
+    UsaMapSmallComponent
   ],
 
 

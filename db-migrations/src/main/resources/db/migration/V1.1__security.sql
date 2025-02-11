@@ -110,6 +110,8 @@ insert into uicontrols(id, name) values(5021, 'page/grid-page-with-custom-filter
 insert into uicontrols(id, name) values(5022, 'page/tab-group-page');
 insert into uicontrols(id, name) values(5023, 'page/pretty-tabs');
 insert into uicontrols(id, name) values(5024, 'page/switch-tabs');
+insert into uicontrols(id, name) values(5025,  'page/dashboard');
+insert into uicontrols(id, name) values(5026,  'page/dashboard/pie-chart');
 
 -- insert into uicontrols(id, name) values(5013, 'page/acknowledgement');
 
