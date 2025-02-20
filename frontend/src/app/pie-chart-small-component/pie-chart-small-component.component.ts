@@ -21,6 +21,7 @@ HC_offlineExport(Highcharts);
 // Turn on the drill-down capabilities
 import HC_drillDown from "highcharts/modules/drilldown";
 import {Chart} from "highcharts";
+import {ChartService} from "../services/chart.service";
 
 HC_drillDown(Highcharts);
 
@@ -31,6 +32,12 @@ HC_drillDown(Highcharts);
   styleUrls: ['./pie-chart-small-component.component.scss']
 })
 export class PieChartSmallComponentComponent implements AfterViewInit{
+
+  constructor(private chartService: ChartService) {
+  }
+
+  private useDarkMode: boolean = false;
+  private useHighContrast: boolean = false;
 
   private chartOptions: any =  {
     chart: {
@@ -45,6 +52,41 @@ export class PieChartSmallComponentComponent implements AfterViewInit{
     subtitle: {
       text: 'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>',
     },
+
+    exporting: {
+      buttons: {
+        contextButton: {
+          menuItems:  [
+            'viewFullscreen',
+            'printChart',
+            'separator',
+            'downloadPNG',
+            'downloadJPEG',
+            'downloadPDF',
+            'downloadSVG',
+            'separator',
+            'downloadCSV',
+            'downloadXLS',
+            'viewData',
+            'separator',
+            {
+              text: 'Toggle Chart Theme',
+              onclick: () => {
+                this.toggleChartTheme();
+              }
+            },
+            'separator',
+            {
+              text: 'Use High Contrast',
+              onclick: () => {
+                this.toggleHighContrast();
+              }
+            },
+          ]
+        }
+      }
+    },
+
     plotOptions: {
       series: {
         allowPointSelect: true,
@@ -110,9 +152,19 @@ export class PieChartSmallComponentComponent implements AfterViewInit{
       },
     ];
 
+
+    if(this.useDarkMode){
+      Highcharts.chart('pie-chart1', Highcharts.merge(this.chartOptions, this.chartService.darkUnicaTheme))
+    }
+    else if(this.useHighContrast){
+      Highcharts.chart('pie-chart1', Highcharts.merge(this.chartOptions, this.chartService.highContrastDarkTheme))    }
+    else{
+      Highcharts.chart('pie-chart1', this.chartOptions);
+    }
+
     // This renders the chart
     // NOTE:  You cannot render a chart from ngOnInit().  You can from ngAfterViewInit().
-    Highcharts.chart('pie-chart1', this.chartOptions);
+    // Highcharts.chart('pie-chart1', this.chartOptions);
 
     // Redraw all of the charts on this page (so they fit perfectly within the mat-card tags
     Highcharts.charts.forEach(function (chart: Chart | undefined) {
@@ -128,6 +180,18 @@ export class PieChartSmallComponentComponent implements AfterViewInit{
       this.reloadData()
     })
     // this.reloadData();
+  }
+
+  public toggleChartTheme(){
+    this.useDarkMode = !this.useDarkMode
+    this.reloadData()
+    console.log("in the toggleChartTheme() method....");
+  }
+
+  public toggleHighContrast(){
+    this.useHighContrast = !this.useHighContrast
+    this.reloadData();
+    console.log("Toggling high contrast");
   }
 
 

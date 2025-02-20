@@ -112,6 +112,7 @@ insert into uicontrols(id, name) values(5023, 'page/pretty-tabs');
 insert into uicontrols(id, name) values(5024, 'page/switch-tabs');
 insert into uicontrols(id, name) values(5025,  'page/dashboard');
 insert into uicontrols(id, name) values(5026,  'page/dashboard/pie-chart');
+insert into uicontrols(id, name) values(5027,  'page/chips-with-textbox');
 
 -- insert into uicontrols(id, name) values(5013, 'page/acknowledgement');
 

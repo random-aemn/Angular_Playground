@@ -155,6 +155,10 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Highcharts Dashboard",
         navItemUrl: Constants.EXERCISE_25A,
       },
+      {
+        navItemName: "Chips with Textbox",
+        navItemUrl: Constants.EXERCISE_26A,
+      },
 
 		]
 	},

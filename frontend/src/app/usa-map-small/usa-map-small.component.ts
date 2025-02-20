@@ -22,7 +22,7 @@ HC_offlineExport(Highcharts);
 
 // Read Json into this variable for geographical coordinates data
 // @ts-ignore
-import usaMapDataAsJson from 'frontend/node_modules/@highcharts/map-collection/countries/us/custom/us-all-territories.geo.json';
+// import usaMapDataAsJson from 'angular_playground/frontend/node_modules/@highcharts/map-collection/countries/us/custom/us-all-territories.geo.json';
 
 @Component({
   selector: 'app-usa-map-small',
@@ -35,9 +35,9 @@ export class UsaMapSmallComponent {
   }
 
   private chartOptions: any = {
-    chart: {
-      map: usaMapDataAsJson
-    },
+    // chart: {
+    //   map: usaMapDataAsJson
+    // },
     title: {
       text: 'US population density (/km²)'
     },
