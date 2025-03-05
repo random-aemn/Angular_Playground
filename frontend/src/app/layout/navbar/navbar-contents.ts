@@ -159,6 +159,18 @@ export const navbarContents: NavGroup[] = [
         navItemName: "Chips with Textbox",
         navItemUrl: Constants.EXERCISE_26A,
       },
+      {
+        navItemName: "Autocomplete Textbox",
+        navItemUrl: Constants.EXERCISE_14D,
+      },
+      {
+        navItemName: "Autocomplete Textbox with Chips",
+        navItemUrl: Constants.EXERCISE_26B,
+      },
+      {
+        navItemName: "Grid with Chips",
+        navItemUrl: Constants.EXERCISE_26C,
+      },
 
 		]
 	},

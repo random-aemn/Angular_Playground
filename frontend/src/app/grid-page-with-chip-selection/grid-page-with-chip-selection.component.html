@@ -1,0 +1,57 @@
+<div class="m-2.5">
+<!--  Header Row    -->
+  <div class="grid grid-cols-2">
+    <div class="text-2xl text-blue-700">
+      Select Contract Reviewers
+    </div>
+    <div class="flex place-content-end">
+<!--      Using the ! to override angular material's settings and set the text size to 2xl  -->
+      <button mat-button class="!text-2xl"> Help</button>
+
+    </div>
+  </div>
+
+<!--  Horizontal Chip Row   -->
+  <div class="flex flex-row flex-wrap ml-[25px] mt-2.5 gap-2.5">
+    <ng-container *ngIf="this.selectedReviewers.length == 0">
+      <div class="h-[32px]">
+      No reviewers selected
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="this.selectedReviewers.length > 0">
+    <mat-chip-row *ngFor="let reviewer of this.selectedReviewers; let index=index"
+                  (removed)="this.removeReviewer(index)">
+
+<!--      chip text   -->
+      <div>
+        {{reviewer.full_name}}
+
+        <!-- Button to remove chip -->
+        <button matChipRemove [attr.aria-label]="'Remove ' + reviewer.full_name">
+          <i class="fa-solid fa-circle-xmark text-black"></i>
+        </button>
+
+      </div>
+
+    </mat-chip-row>
+    </ng-container>
+  </div>
+
+<!--  Grid -->
+  <div class="overflow-y-auto mt-2.5" style="height: calc(100vh - 190px)">
+    <ag-grid-angular
+    [gridOptions]="this.gridOptions"
+    [columnDefs]="this.columnDefs"
+    [defaultColDef]="this.defaultColumnDef"
+    class="w-full h-full ag-theme-alpine"
+    (gridReady)="onGridReady($event)"
+    >
+
+    </ag-grid-angular>
+  </div>
+
+
+
+
+</div>

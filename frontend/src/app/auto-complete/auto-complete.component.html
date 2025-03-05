@@ -1,0 +1,30 @@
+<ng-container *ngIf="(this.obsSearchMatchesToShow | async) as matches">
+<div class="m-2.5">
+<!--  Header  -->
+  <div class="grid grid-cols-2">
+    <div>
+      Stock Trade Autocomplete
+    </div>
+    <div class="flex place-content-end">
+      Help
+    </div>
+  </div>
+
+<!--  Body of the page  -->
+
+  <div class="flex flex-col mt-5">
+<!--    symbol input box-->
+<!--    <mat-form-field subscriptSizing="dynamic">-->
+    <div class="searchBoxWrapper fa-border">
+      <input formControlName="stockSymbol" matInput type="text" title="Stock Symbol" aria-label="Stock Symbol" class="mr-5" placeholder="Stock Symbol" id="searchBox"/>
+      <span class="searchBoxIcon">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </span>
+    </div>
+<!--    </mat-form-field>-->
+
+  </div>
+
+</div>
+</ng-container>
+

@@ -1,0 +1,33 @@
+.searchBoxWrapper {
+  background-color: whitesmoke;
+  border-radius: 4px;
+  border: 0;
+
+  /* Center the search box and the icon */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 255px;                   /* Set the width of the search box wrapper */
+}
+
+#searchBox {
+  width: 235px;                  	/* Set the width of the search box */
+  padding: 6px 0 6px 10px;
+  background-color: whitesmoke;   /* light white color */
+  border: 0;
+  color: #111;			/* Text color is almost black */
+
+  /* Remove the outline that appears when clicking in textbox */
+  outline: none;
+}
+
+.searchBoxIcon {
+  color: black;
+  padding: 6px 1px 6px 1px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+
+

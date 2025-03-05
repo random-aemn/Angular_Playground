@@ -40,6 +40,9 @@ export enum Constants {
   EXERCISE_25A                               = "page/dashboard",
   EXERCISE_25C                               = "page/dashboard/pie-chart",
   EXERCISE_26A                               = "page/chips-with-textbox",
+  EXERCISE_14D                               = "page/autocomplete-textbox",
+  EXERCISE_26B                               = "page/chips-with-autocomplete",
+  EXERCISE_26C                               = "page/grid-page-with-chip-selection",
 
   // Preference Names
   NAVBAR_EXTENDED_STATE_PREFERENCE_NAME      = "navbar_extended_state", // Preference name for navbar mode (extended/collapsed)
